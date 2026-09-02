@@ -8,6 +8,12 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,"Segoe UI",system-ui,sans-serif;background:#f0f2f5;color:#1f2328;font-size:14px}
+.drilldown-bar{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:10px 16px;margin-bottom:12px;display:flex;align-items:center;gap:10px;font-size:13px}
+.drilldown-bar .drill-back{background:#0f62fe;color:#fff;border:none;border-radius:5px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer}
+.drilldown-bar .drill-back:hover{background:#0353e9}
+.drilldown-crumb{color:#57606a}
+.drilldown-crumb b{color:#1f2328}
+.drill-hint{font-size:11px;color:#a8b0b9;margin-left:auto}
 header{background:#161616;color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.4)}
 header h1{font-size:17px;font-weight:600;letter-spacing:.3px}
 header span{font-size:12px;color:#a8b0b9}
@@ -86,10 +92,10 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
 
 <!-- ===================== EXECUTIVE TAB ===================== -->
 <div id="tab-executive" class="tab-content active">
-  <div class="filters-bar">
+  <div class="filters-bar" id="exec-filters-bar">
     <div class="filter-group">
       <label>Quarter:</label>
-      <select id="exec-quarter" onchange="renderExecutive()">
+      <select id="exec-quarter" onchange="execResetDrill()">
         <option value="all">All Quarters</option>
         <option value="1Q">Q1 2026</option>
         <option value="2Q">Q2 2026</option>
@@ -98,7 +104,7 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
     </div>
     <div class="filter-group">
       <label>Month Range:</label>
-      <select id="exec-month-from" onchange="renderExecutive()">
+      <select id="exec-month-from" onchange="execResetDrill()">
         <option value="1">Jan</option>
         <option value="2">Feb</option>
         <option value="3">Mar</option>
@@ -109,7 +115,7 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
         <option value="8">Aug</option>
       </select>
       <span>→</span>
-      <select id="exec-month-to" onchange="renderExecutive()">
+      <select id="exec-month-to" onchange="execResetDrill()">
         <option value="1">Jan</option>
         <option value="2">Feb</option>
         <option value="3">Mar</option>
@@ -122,21 +128,27 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
     </div>
     <div class="filter-group">
       <label>Project:</label>
-      <select id="exec-project" onchange="renderExecutive()">
+      <select id="exec-project" onchange="execResetDrill()">
         <option value="all">All Projects</option>
       </select>
     </div>
+  </div>
+
+  <div class="drilldown-bar" id="exec-drill-bar" style="display:none">
+    <button class="drill-back" onclick="execDrillBack()">← Back</button>
+    <span class="drilldown-crumb" id="exec-drill-crumb"></span>
+    <span class="drill-hint">Click a bar to drill deeper</span>
   </div>
 
   <div class="kpi-grid" id="exec-kpis"></div>
 
   <div class="chart-grid cols2">
     <div class="chart-card">
-      <h3>Chargeable Utilization % <span class="badge">Monthly Avg</span></h3>
+      <h3>Chargeable Utilization % <span class="badge" id="exec-cu-badge">Quarter View</span></h3>
       <div class="chart" id="exec-cu-chart"></div>
     </div>
     <div class="chart-card">
-      <h3>Processed Hours % <span class="badge">Monthly Avg</span></h3>
+      <h3>Processed Hours % <span class="badge" id="exec-proc-badge">Quarter View</span></h3>
       <div class="chart" id="exec-proc-chart"></div>
     </div>
   </div>
@@ -145,7 +157,7 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
 
   <div class="chart-grid cols12">
     <div class="chart-card">
-      <h3>Time Away Breakdown % <span class="badge">Weekly</span></h3>
+      <h3>Time Away Breakdown % <span class="badge" id="exec-ta-badge">Quarter View</span></h3>
       <div class="chart" id="exec-ta-chart"></div>
     </div>
     <div class="chart-card">
@@ -471,16 +483,113 @@ function switchTab(name, btn){
   }, 30);
 }
 
-// ===== EXECUTIVE TAB =====
+// ===== EXECUTIVE TAB — DRILLDOWN STATE =====
+// level: 'quarter' | 'month' | 'week'
+var execDrill = { level: 'quarter', quarter: null, month: null };
+
+function execResetDrill(){
+  execDrill = { level: 'quarter', quarter: null, month: null };
+  renderExecutive();
+}
+
+function execDrillBack(){
+  if(execDrill.level === 'week'){
+    execDrill.level = 'month';
+    execDrill.month = null;
+  } else {
+    execDrill.level = 'quarter';
+    execDrill.quarter = null;
+    execDrill.month = null;
+  }
+  renderExecutive();
+}
+
+// Aggregate weekly rows → quarterly averages
+function aggregateQuarterly(rows){
+  var qMap = {};
+  rows.forEach(function(r){
+    var k = r.Quarter;
+    if(!qMap[k]) qMap[k]={Quarter:r.Quarter,cu:[],proc:[],ill:[],vac:[],other:[]};
+    qMap[k].cu.push(r.CU_pct);
+    qMap[k].proc.push(r.Proc_pct);
+    qMap[k].ill.push(r.Illness_pct);
+    qMap[k].vac.push(r.Vacation_pct);
+    qMap[k].other.push(r.OtherTA_pct);
+  });
+  var order = {'1Q':1,'2Q':2,'3Q':3,'4Q':4};
+  return Object.values(qMap).sort(function(a,b){return (order[a.Quarter]||9)-(order[b.Quarter]||9);}).map(function(q){
+    return {
+      Quarter:q.Quarter,
+      label:qLabel(q.Quarter),
+      CU_pct:+avg(q.cu).toFixed(2),
+      Proc_pct:+avg(q.proc).toFixed(2),
+      Illness_pct:+avg(q.ill).toFixed(2),
+      Vacation_pct:+avg(q.vac).toFixed(2),
+      OtherTA_pct:+avg(q.other).toFixed(2),
+    };
+  });
+}
+
+// Fix quarterly label display
+function qLabel(q){
+  var map = {'1Q':'Q1 2026','2Q':'Q2 2026','3Q':'Q3 2026','4Q':'Q4 2026'};
+  return map[q]||q;
+}
+
 function renderExecutive(){
   const q = document.getElementById('exec-quarter').value;
   const mf = document.getElementById('exec-month-from').value;
   const mt = document.getElementById('exec-month-to').value;
   const proj = document.getElementById('exec-project').value;
 
-  var rows = filterWeekly(q, mf, mt, null, proj);
+  // Apply top-level filters (quarter filter from select only applies when not drilled in)
+  var baseRows;
+  if(execDrill.level === 'quarter'){
+    baseRows = filterWeekly(q, mf, mt, null, proj);
+  } else {
+    baseRows = filterWeekly(null, mf, mt, null, proj);
+  }
+  if(!baseRows.length) return;
+
+  // Update drilldown breadcrumb bar
+  var drillBar = document.getElementById('exec-drill-bar');
+  var crumb = document.getElementById('exec-drill-crumb');
+  var filtersBar = document.getElementById('exec-filters-bar');
+
+  if(execDrill.level === 'quarter'){
+    drillBar.style.display = 'none';
+    filtersBar.style.display = '';
+    document.getElementById('exec-cu-badge').textContent = 'Quarter View';
+    document.getElementById('exec-proc-badge').textContent = 'Quarter View';
+    document.getElementById('exec-ta-badge').textContent = 'Quarter View';
+  } else if(execDrill.level === 'month'){
+    drillBar.style.display = '';
+    filtersBar.style.display = 'none';
+    crumb.innerHTML = 'All Quarters → <b>'+qLabel(execDrill.quarter)+'</b> → (click month to drill to weeks)';
+    document.getElementById('exec-cu-badge').textContent = 'Monthly View';
+    document.getElementById('exec-proc-badge').textContent = 'Monthly View';
+    document.getElementById('exec-ta-badge').textContent = 'Monthly View';
+  } else {
+    drillBar.style.display = '';
+    filtersBar.style.display = 'none';
+    crumb.innerHTML = 'All Quarters → <b>'+qLabel(execDrill.quarter)+'</b> → <b>'+MONTHS[execDrill.month]+'</b> → Weekly breakdown';
+    document.getElementById('exec-cu-badge').textContent = 'Weekly View';
+    document.getElementById('exec-proc-badge').textContent = 'Weekly View';
+    document.getElementById('exec-ta-badge').textContent = 'Weekly View';
+  }
+
+  // Determine rows for this level
+  var rows;
+  if(execDrill.level === 'quarter'){
+    rows = baseRows;
+  } else if(execDrill.level === 'month'){
+    rows = baseRows.filter(function(r){return r.Quarter === execDrill.quarter;});
+  } else {
+    rows = baseRows.filter(function(r){return r.Quarter === execDrill.quarter && r.Month === execDrill.month;});
+  }
   if(!rows.length) return;
 
+  // KPI cards always show summary of current rows
   const avgCU = avg(rows.map(r=>r.CU_pct));
   const avgProc = avg(rows.map(r=>r.Proc_pct));
   const avgIll = avg(rows.map(r=>r.Illness_pct));
@@ -506,48 +615,128 @@ function renderExecutive(){
   ];
   kpiEl.innerHTML = cards.map(k=>'<div class="kpi-card '+k.cls+'"><div class="label">'+k.label+'</div><div class="value">'+k.val+'</div><div class="sub">'+k.sub+'</div></div>').join('');
 
-  // Aggregate weekly rows → monthly for the trend charts
-  var monthly = aggregateMonthly(rows);
-  var mLabels = monthly.map(m=>m.label);
-  var cuVals  = monthly.map(m=>m.CU_pct);
-  var procVals= monthly.map(m=>m.Proc_pct);
-  var taLabels= monthly.map(m=>m.label);
+  // Build chart data based on drill level
+  var chartLabels, cuVals, procVals, taData, drillable;
+
+  if(execDrill.level === 'quarter'){
+    // Aggregate to quarterly
+    var quarterly = aggregateQuarterly(rows);
+    chartLabels = quarterly.map(function(q){return qLabel(q.Quarter);});
+    cuVals = quarterly.map(function(q){return q.CU_pct;});
+    procVals = quarterly.map(function(q){return q.Proc_pct;});
+    taData = quarterly;
+    // Store mapping so click handler knows which quarter was clicked
+    drillable = quarterly.map(function(q){return {quarter:q.Quarter, month:null};});
+  } else if(execDrill.level === 'month'){
+    // Aggregate to monthly within the selected quarter
+    var monthly = aggregateMonthly(rows);
+    chartLabels = monthly.map(function(m){return m.label;});
+    cuVals = monthly.map(function(m){return m.CU_pct;});
+    procVals = monthly.map(function(m){return m.Proc_pct;});
+    taData = monthly;
+    drillable = monthly.map(function(m){return {quarter:execDrill.quarter, month:m.Month};});
+  } else {
+    // Weekly view — no further drilldown
+    chartLabels = rows.map(function(r){return wLabel(r.week_label);});
+    cuVals = rows.map(function(r){return r.CU_pct;});
+    procVals = rows.map(function(r){return r.Proc_pct;});
+    taData = rows.map(function(r){return {label:wLabel(r.week_label),Illness_pct:r.Illness_pct,Vacation_pct:r.Vacation_pct,OtherTA_pct:r.OtherTA_pct};});
+    drillable = null; // no more drilling
+  }
 
   var cuC = getOrInit('exec-cu-chart');
-  if(cuC) cuC.setOption({
-    tooltip:{trigger:'axis',formatter:function(p){return '<b>'+p[0].name+'</b><br/>Avg CU: '+p[0].value.toFixed(1)+'%';}},
-    xAxis:{type:'category',data:mLabels,axisLabel:{rotate:30,fontSize:11}},
-    yAxis:{type:'value',min:50,max:115,axisLabel:{formatter:'{value}%'}},
-    series:[{type:'bar',data:cuVals.map(function(v){return {value:v,itemStyle:{color:v>=90?'#198038':v>=80?'#0f62fe':'#da1e28'}};}),
-      label:{show:true,position:'top',formatter:function(p){return p.value.toFixed(1)+'%';},fontSize:11},
-      markLine:{silent:true,data:[{yAxis:85,lineStyle:{color:'#f1620a',type:'dashed'},label:{formatter:'Target 85%'}}]}}],
-    grid:{left:50,right:20,top:25,bottom:50}
-  });
+  if(cuC){
+    cuC.setOption({
+      tooltip:{trigger:'axis',formatter:function(p){return '<b>'+p[0].name+'</b><br/>Avg CU: '+p[0].value.toFixed(1)+'%'+(drillable?' — click to drill':'');}},
+      xAxis:{type:'category',data:chartLabels,axisLabel:{rotate:30,fontSize:11}},
+      yAxis:{type:'value',min:50,max:115,axisLabel:{formatter:'{value}%'}},
+      series:[{type:'bar',data:cuVals.map(function(v){return {value:v,itemStyle:{color:v>=90?'#198038':v>=80?'#0f62fe':'#da1e28'}};}),
+        label:{show:true,position:'top',formatter:function(p){return p.value.toFixed(1)+'%';},fontSize:11},
+        markLine:{silent:true,data:[{yAxis:85,lineStyle:{color:'#f1620a',type:'dashed'},label:{formatter:'Target 85%'}}]},
+        cursor: drillable ? 'pointer' : 'default'
+      }],
+      grid:{left:50,right:20,top:25,bottom:50}
+    });
+    cuC.off('click');
+    if(drillable){
+      cuC.on('click', function(params){
+        var idx = params.dataIndex;
+        if(idx==null || !drillable[idx]) return;
+        var d = drillable[idx];
+        if(execDrill.level === 'quarter'){
+          execDrill.level = 'month';
+          execDrill.quarter = d.quarter;
+        } else if(execDrill.level === 'month'){
+          execDrill.level = 'week';
+          execDrill.month = d.month;
+        }
+        renderExecutive();
+      });
+    }
+  }
 
   var procC = getOrInit('exec-proc-chart');
-  if(procC) procC.setOption({
-    tooltip:{trigger:'axis',formatter:function(p){return '<b>'+p[0].name+'</b><br/>Avg Proc: '+p[0].value.toFixed(1)+'%';}},
-    xAxis:{type:'category',data:mLabels,axisLabel:{rotate:30,fontSize:11}},
-    yAxis:{type:'value',min:90,axisLabel:{formatter:'{value}%'}},
-    series:[{type:'bar',data:procVals,itemStyle:{color:'#198038'},
-      label:{show:true,position:'top',formatter:function(p){return parseFloat(p.value).toFixed(1)+'%';},fontSize:11},
-      markLine:{silent:true,data:[{yAxis:100,lineStyle:{color:'#da1e28',type:'dashed'},label:{formatter:'100%'}}]}}],
-    grid:{left:50,right:20,top:25,bottom:50}
-  });
+  if(procC){
+    procC.setOption({
+      tooltip:{trigger:'axis',formatter:function(p){return '<b>'+p[0].name+'</b><br/>Avg Proc: '+p[0].value.toFixed(1)+'%'+(drillable?' — click to drill':'');}},
+      xAxis:{type:'category',data:chartLabels,axisLabel:{rotate:30,fontSize:11}},
+      yAxis:{type:'value',min:90,axisLabel:{formatter:'{value}%'}},
+      series:[{type:'bar',data:procVals,itemStyle:{color:'#198038'},
+        label:{show:true,position:'top',formatter:function(p){return parseFloat(p.value).toFixed(1)+'%';},fontSize:11},
+        markLine:{silent:true,data:[{yAxis:100,lineStyle:{color:'#da1e28',type:'dashed'},label:{formatter:'100%'}}]},
+        cursor: drillable ? 'pointer' : 'default'
+      }],
+      grid:{left:50,right:20,top:25,bottom:50}
+    });
+    procC.off('click');
+    if(drillable){
+      procC.on('click', function(params){
+        var idx = params.dataIndex;
+        if(idx==null || !drillable[idx]) return;
+        var d = drillable[idx];
+        if(execDrill.level === 'quarter'){
+          execDrill.level = 'month';
+          execDrill.quarter = d.quarter;
+        } else if(execDrill.level === 'month'){
+          execDrill.level = 'week';
+          execDrill.month = d.month;
+        }
+        renderExecutive();
+      });
+    }
+  }
 
   var taC = getOrInit('exec-ta-chart');
-  if(taC) taC.setOption({
-    tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
-    legend:{top:0,data:['Illness','Vacation','Other TA'],textStyle:{fontSize:11}},
-    xAxis:{type:'category',data:taLabels,axisLabel:{rotate:30,fontSize:11}},
-    yAxis:{type:'value',axisLabel:{formatter:'{value}%'}},
-    series:[
-      {name:'Illness',type:'bar',stack:'ta',data:monthly.map(r=>r.Illness_pct),itemStyle:{color:'#da1e28'},label:{show:true,position:'inside',formatter:function(p){return p.value>0?p.value.toFixed(1)+'%':'';},fontSize:10,color:'#fff'}},
-      {name:'Vacation',type:'bar',stack:'ta',data:monthly.map(r=>r.Vacation_pct),itemStyle:{color:'#7c5cd8'},label:{show:true,position:'inside',formatter:function(p){return p.value>0?p.value.toFixed(1)+'%':'';},fontSize:10,color:'#fff'}},
-      {name:'Other TA',type:'bar',stack:'ta',data:monthly.map(r=>r.OtherTA_pct),itemStyle:{color:'#f1620a'},label:{show:true,position:'inside',formatter:function(p){return p.value>0?p.value.toFixed(1)+'%':'';},fontSize:10,color:'#fff'}},
-    ],
-    grid:{left:50,right:20,top:30,bottom:50}
-  });
+  if(taC){
+    taC.setOption({
+      tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+      legend:{top:0,data:['Illness','Vacation','Other TA'],textStyle:{fontSize:11}},
+      xAxis:{type:'category',data:taData.map(function(r){return r.label;}),axisLabel:{rotate:30,fontSize:11}},
+      yAxis:{type:'value',axisLabel:{formatter:'{value}%'}},
+      series:[
+        {name:'Illness',type:'bar',stack:'ta',data:taData.map(function(r){return r.Illness_pct;}),itemStyle:{color:'#da1e28'},label:{show:true,position:'inside',formatter:function(p){return p.value>0?parseFloat(p.value).toFixed(1)+'%':'';},fontSize:10,color:'#fff'},cursor:drillable?'pointer':'default'},
+        {name:'Vacation',type:'bar',stack:'ta',data:taData.map(function(r){return r.Vacation_pct;}),itemStyle:{color:'#7c5cd8'},label:{show:true,position:'inside',formatter:function(p){return p.value>0?parseFloat(p.value).toFixed(1)+'%':'';},fontSize:10,color:'#fff'},cursor:drillable?'pointer':'default'},
+        {name:'Other TA',type:'bar',stack:'ta',data:taData.map(function(r){return r.OtherTA_pct;}),itemStyle:{color:'#f1620a'},label:{show:true,position:'inside',formatter:function(p){return p.value>0?parseFloat(p.value).toFixed(1)+'%':'';},fontSize:10,color:'#fff'},cursor:drillable?'pointer':'default'},
+      ],
+      grid:{left:50,right:20,top:30,bottom:50}
+    });
+    taC.off('click');
+    if(drillable){
+      taC.on('click', function(params){
+        var idx = params.dataIndex;
+        if(idx==null || !drillable[idx]) return;
+        var d = drillable[idx];
+        if(execDrill.level === 'quarter'){
+          execDrill.level = 'month';
+          execDrill.quarter = d.quarter;
+        } else if(execDrill.level === 'month'){
+          execDrill.level = 'week';
+          execDrill.month = d.month;
+        }
+        renderExecutive();
+      });
+    }
+  }
 
   var hcC = getOrInit('exec-hc-chart');
   if(hcC) hcC.setOption({

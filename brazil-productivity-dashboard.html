@@ -727,7 +727,6 @@ function renderExecutive(){
   const cards = isHoursMode ? [
     {label:'Chargeable Hours',val:sumCU.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:avgCU>=90?'green':avgCU>=80?'':'orange'},
     {label:'Processed Hours',val:sumProc.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:''},
-    {label:'Latest Week Chargeable',val:lastCUHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:lastWeek,cls:lastCU>=90?'green':lastCU>=80?'':'orange'},
     {label:'Illness Hours',val:sumIll.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:avgIll>3.5?'red':avgIll>2.5?'orange':'green'},
     {label:'Vacation Hours',val:sumVac.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:'purple'},
     {label:'Other TA Hours',val:sumOther.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:''},
@@ -737,7 +736,6 @@ function renderExecutive(){
   ] : [
     {label:'Avg CU %',val:avgCU.toFixed(1)+'%',sub:'Chargeable Utilization',cls:avgCU>=90?'green':avgCU>=80?'':'orange'},
     {label:'Avg Processed %',val:avgProc.toFixed(1)+'%',sub:'Total Hours Processed',cls:''},
-    {label:'Latest Week CU',val:lastCU.toFixed(1)+'%',sub:lastWeek,cls:lastCU>=90?'green':lastCU>=80?'':'orange'},
     {label:'Avg Illness %',val:avgIll.toFixed(2)+'%',sub:'of Available Hours',cls:avgIll>3.5?'red':avgIll>2.5?'orange':'green'},
     {label:'Avg Vacation %',val:avgVac.toFixed(1)+'%',sub:'of Available Hours',cls:'purple'},
     {label:'Avg Other TA %',val:avgOther.toFixed(1)+'%',sub:'of Available Hours',cls:''},

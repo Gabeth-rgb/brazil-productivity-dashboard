@@ -71,6 +71,11 @@ tr:hover td{background:#f7f8fa}
 .pill.blue{background:#e8f0fe;color:#0f62fe}
 .range-label{font-size:11px;font-weight:600;background:#e8f0fe;color:#0f62fe;border-radius:4px;padding:2px 8px}
 footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10px;border-top:1px solid #e5e7eb;background:#fff}
+/* View Mode Toggle Button Group */
+.toggle-group{display:inline-flex;border:1px solid #d0d7de;border-radius:6px;overflow:hidden;background:#f7f8fa;padding:2px;align-items:center}
+.toggle-btn{border:none;background:transparent;padding:4px 10px;font-size:11px;font-weight:600;color:#57606a;cursor:pointer;border-radius:4px;transition:all .15s ease}
+.toggle-btn.active{background:#0f62fe;color:#fff}
+.toggle-btn:hover:not(.active){background:#e5e7eb;color:#1f2328}
 @media(max-width:768px){.chart-grid.cols2,.chart-grid.cols3,.chart-grid.cols12,.chart-grid.cols21{grid-template-columns:1fr}.kpi-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -132,12 +137,26 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
         <option value="all">All Projects</option>
       </select>
     </div>
+    <div class="filter-group" style="margin-left:auto">
+      <label>View Mode:</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active toggle-pct" onclick="setHoursMode(false)">%</button>
+        <button class="toggle-btn toggle-hrs" onclick="setHoursMode(true)">Hours</button>
+      </div>
+    </div>
   </div>
 
   <div class="drilldown-bar" id="exec-drill-bar" style="display:none">
     <button class="drill-back" onclick="execDrillBack()">← Back</button>
     <span class="drilldown-crumb" id="exec-drill-crumb"></span>
     <span class="drill-hint">Click a bar to drill deeper</span>
+    <div class="filter-group" style="margin-left:auto; display:flex; align-items:center; gap:6px">
+      <label>View Mode:</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active toggle-pct" onclick="setHoursMode(false)">%</button>
+        <button class="toggle-btn toggle-hrs" onclick="setHoursMode(true)">Hours</button>
+      </div>
+    </div>
   </div>
 
   <div class="kpi-grid" id="exec-kpis"></div>
@@ -199,6 +218,13 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
       <input type="range" id="perf-target" min="70" max="100" value="85" step="1" oninput="updateTarget(this.value)"/>
       <span class="range-label" id="perf-target-label">85%</span>
     </div>
+    <div class="filter-group" style="margin-left:auto">
+      <label>View Mode:</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active toggle-pct" onclick="setHoursMode(false)">%</button>
+        <button class="toggle-btn toggle-hrs" onclick="setHoursMode(true)">Hours</button>
+      </div>
+    </div>
   </div>
 
   <div class="section-title">Weekly Performance Overview</div>
@@ -254,6 +280,13 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
         <option value="3Q">Q3</option>
       </select>
     </div>
+    <div class="filter-group" style="margin-left:auto">
+      <label>View Mode:</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active toggle-pct" onclick="setHoursMode(false)">%</button>
+        <button class="toggle-btn toggle-hrs" onclick="setHoursMode(true)">Hours</button>
+      </div>
+    </div>
   </div>
 
   <div class="kpi-grid" id="ta-kpis"></div>
@@ -305,9 +338,16 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
       <input type="range" id="proj-min-hrs" min="0" max="5000" value="1000" step="100" oninput="updateProjFilter(this.value)"/>
       <span class="range-label" id="proj-min-label">1000h</span>
     </div>
+    <div class="filter-group" style="margin-left:auto">
+      <label>View Mode:</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active toggle-pct" onclick="setHoursMode(false)">%</button>
+        <button class="toggle-btn toggle-hrs" onclick="setHoursMode(true)">Hours</button>
+      </div>
+    </div>
   </div>
 
-  <div class="section-title">Project CU Ranking (Avg % over period)</div>
+  <div class="section-title" id="proj-ranking-title">Project CU Ranking (Avg % over period)</div>
   <div class="chart-card">
     <div class="chart-tall" id="proj-bar-chart"></div>
   </div>
@@ -330,6 +370,13 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
         <option value="2025">2025</option>
         <option value="2026" selected>2026</option>
       </select>
+    </div>
+    <div class="filter-group" style="margin-left:auto">
+      <label>View Mode:</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active toggle-pct" onclick="setHoursMode(false)">%</button>
+        <button class="toggle-btn toggle-hrs" onclick="setHoursMode(true)">Hours</button>
+      </div>
     </div>
   </div>
 
@@ -362,6 +409,16 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
 
 <!-- ===================== INSIGHTS TAB ===================== -->
 <div id="tab-insights" class="tab-content">
+  <div class="filters-bar" style="margin-bottom:12px">
+    <div class="filter-group" style="margin-left:auto">
+      <label>View Mode:</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active toggle-pct" onclick="setHoursMode(false)">%</button>
+        <button class="toggle-btn toggle-hrs" onclick="setHoursMode(true)">Hours</button>
+      </div>
+    </div>
+  </div>
+
   <div class="section-title">🔍 Automated Insights & Patterns</div>
 
   <div class="chart-grid cols2">
@@ -404,6 +461,24 @@ const RAW = {"weekly_metrics":[{"week_label":"2026-01-WK01","Year":2026,"Month":
 <script>
 
 // ===== UTILITY FUNCTIONS =====
+let isHoursMode = false;
+function setHoursMode(on){
+  isHoursMode = on;
+  document.querySelectorAll('.toggle-btn.toggle-hrs').forEach(btn => btn.classList.toggle('active', on));
+  document.querySelectorAll('.toggle-btn.toggle-pct').forEach(btn => btn.classList.toggle('active', !on));
+  
+  const activeTab = document.querySelector('.tab-content.active');
+  if(activeTab){
+    const id = activeTab.id;
+    if(id === 'tab-executive') renderExecutive();
+    else if(id === 'tab-performance') renderPerformance();
+    else if(id === 'tab-timeaway') renderTimeaway();
+    else if(id === 'tab-projects') renderProjects();
+    else if(id === 'tab-headcount') renderHeadcount();
+    else if(id === 'tab-insights') renderInsights();
+  }
+}
+
 const MONTHS = {1:'Jan',2:'Feb',3:'Mar',4:'Apr',5:'May',6:'Jun',7:'Jul',8:'Aug',9:'Sep',10:'Oct',11:'Nov',12:'Dec'};
 const BAND_COLORS = {'3':'#0f62fe','4':'#198038','5':'#f1620a','6':'#da1e28','7':'#7c5cd8','8':'#8a3ffc','9':'#08bdba','10':'#a56eff','6.5':'#ff7eb6'};
 const PALETTE = ['#0f62fe','#198038','#da1e28','#7c5cd8','#f1620a','#08bdba','#a56eff','#ff7eb6','#d4bbff','#bae6ff'];
@@ -437,10 +512,13 @@ function aggregateMonthly(rows){
   var monthly = {};
   rows.forEach(function(r){
     var k = r.Year+'_'+r.Month;
-    if(!monthly[k]) monthly[k]={Year:r.Year,Month:r.Month,chargeable:0,avail_hrs:0,processed:0,ill:[],vac:[],other:[]};
+    if(!monthly[k]) monthly[k]={Year:r.Year,Month:r.Month,chargeable:0,avail_hrs:0,processed:0,ill_hrs:0,vac_hrs:0,other_hrs:0,ill:[],vac:[],other:[]};
     monthly[k].chargeable += r.chargeable;
     monthly[k].avail_hrs  += r.avail_hrs;
     monthly[k].processed  += r.processed;
+    monthly[k].ill_hrs    += (r.Illness_pct * r.avail_hrs / 100);
+    monthly[k].vac_hrs    += (r.Vacation_pct * r.avail_hrs / 100);
+    monthly[k].other_hrs  += (r.OtherTA_pct * r.avail_hrs / 100);
     monthly[k].ill.push(r.Illness_pct);
     monthly[k].vac.push(r.Vacation_pct);
     monthly[k].other.push(r.OtherTA_pct);
@@ -449,6 +527,12 @@ function aggregateMonthly(rows){
     return {
       Year:m.Year, Month:m.Month,
       label: MONTHS[m.Month]+" '"+String(m.Year).slice(2),
+      avail_hrs: m.avail_hrs,
+      chargeable: m.chargeable,
+      processed: m.processed,
+      ill_hrs: m.ill_hrs,
+      vac_hrs: m.vac_hrs,
+      other_hrs: m.other_hrs,
       CU_pct:   +(m.chargeable / m.avail_hrs * 100).toFixed(2),
       Proc_pct: +(m.processed  / m.avail_hrs * 100).toFixed(2),
       Illness_pct:  +avg(m.ill).toFixed(2),
@@ -510,10 +594,13 @@ function aggregateQuarterly(rows){
   var qMap = {};
   rows.forEach(function(r){
     var k = r.Quarter;
-    if(!qMap[k]) qMap[k]={Quarter:r.Quarter,chargeable:0,avail_hrs:0,processed:0,ill:[],vac:[],other:[]};
+    if(!qMap[k]) qMap[k]={Quarter:r.Quarter,chargeable:0,avail_hrs:0,processed:0,ill_hrs:0,vac_hrs:0,other_hrs:0,ill:[],vac:[],other:[]};
     qMap[k].chargeable += r.chargeable;
     qMap[k].avail_hrs  += r.avail_hrs;
     qMap[k].processed  += r.processed;
+    qMap[k].ill_hrs    += (r.Illness_pct * r.avail_hrs / 100);
+    qMap[k].vac_hrs    += (r.Vacation_pct * r.avail_hrs / 100);
+    qMap[k].other_hrs  += (r.OtherTA_pct * r.avail_hrs / 100);
     qMap[k].ill.push(r.Illness_pct);
     qMap[k].vac.push(r.Vacation_pct);
     qMap[k].other.push(r.OtherTA_pct);
@@ -523,6 +610,12 @@ function aggregateQuarterly(rows){
     return {
       Quarter:q.Quarter,
       label:qLabel(q.Quarter),
+      avail_hrs: q.avail_hrs,
+      chargeable: q.chargeable,
+      processed: q.processed,
+      ill_hrs: q.ill_hrs,
+      vac_hrs: q.vac_hrs,
+      other_hrs: q.other_hrs,
       CU_pct:   +(q.chargeable / q.avail_hrs * 100).toFixed(2),
       Proc_pct: +(q.processed  / q.avail_hrs * 100).toFixed(2),
       Illness_pct:  +avg(q.ill).toFixed(2),
@@ -592,12 +685,20 @@ function renderExecutive(){
   if(!rows.length) return;
 
   // KPI cards always show summary of current rows
+  const sumAvail = rows.reduce((sum, r) => sum + r.avail_hrs, 0);
+  const sumCU = rows.reduce((sum, r) => sum + r.chargeable, 0);
+  const sumProc = rows.reduce((sum, r) => sum + r.processed, 0);
+  const sumIll = rows.reduce((sum, r) => sum + (r.Illness_pct * r.avail_hrs / 100), 0);
+  const sumVac = rows.reduce((sum, r) => sum + (r.Vacation_pct * r.avail_hrs / 100), 0);
+  const sumOther = rows.reduce((sum, r) => sum + (r.OtherTA_pct * r.avail_hrs / 100), 0);
+
   const avgCU = avg(rows.map(r=>r.CU_pct));
   const avgProc = avg(rows.map(r=>r.Proc_pct));
   const avgIll = avg(rows.map(r=>r.Illness_pct));
   const avgVac = avg(rows.map(r=>r.Vacation_pct));
   const avgOther = avg(rows.map(r=>r.OtherTA_pct));
   const lastCU = rows[rows.length-1].CU_pct;
+  const lastCUHrs = rows[rows.length-1].chargeable;
   const lastWeek = rows[rows.length-1].week_label;
 
   const hc26 = RAW.hc_monthly.filter(r=>r.Year===2026);
@@ -605,7 +706,16 @@ function renderExecutive(){
   const lastBand = hc26.length ? hc26[hc26.length-1].Band_avg : 0;
 
   const kpiEl = document.getElementById('exec-kpis');
-  const cards = [
+  const cards = isHoursMode ? [
+    {label:'Chargeable Hours',val:sumCU.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:avgCU>=90?'green':avgCU>=80?'':'orange'},
+    {label:'Processed Hours',val:sumProc.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:''},
+    {label:'Latest Week Chargeable',val:lastCUHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:lastWeek,cls:lastCU>=90?'green':lastCU>=80?'':'orange'},
+    {label:'Illness Hours',val:sumIll.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:avgIll>3.5?'red':avgIll>2.5?'orange':'green'},
+    {label:'Vacation Hours',val:sumVac.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:'purple'},
+    {label:'Other TA Hours',val:sumOther.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:''},
+    {label:'Current HC',val:lastHC,sub:'Active employees',cls:''},
+    {label:'Band Average',val:lastBand.toFixed(2),sub:'Latest month',cls:''},
+  ] : [
     {label:'Avg CU %',val:avgCU.toFixed(1)+'%',sub:'Chargeable Utilization',cls:avgCU>=90?'green':avgCU>=80?'':'orange'},
     {label:'Avg Processed %',val:avgProc.toFixed(1)+'%',sub:'Total Hours Processed',cls:''},
     {label:'Latest Week CU',val:lastCU.toFixed(1)+'%',sub:lastWeek,cls:lastCU>=90?'green':lastCU>=80?'':'orange'},
@@ -624,8 +734,8 @@ function renderExecutive(){
     // Aggregate to quarterly
     var quarterly = aggregateQuarterly(rows);
     chartLabels = quarterly.map(function(q){return qLabel(q.Quarter);});
-    cuVals = quarterly.map(function(q){return q.CU_pct;});
-    procVals = quarterly.map(function(q){return q.Proc_pct;});
+    cuVals = quarterly.map(function(q){return isHoursMode ? q.chargeable : q.CU_pct;});
+    procVals = quarterly.map(function(q){return isHoursMode ? q.processed : q.Proc_pct;});
     taData = quarterly;
     // Store mapping so click handler knows which quarter was clicked
     drillable = quarterly.map(function(q){return {quarter:q.Quarter, month:null};});
@@ -633,31 +743,48 @@ function renderExecutive(){
     // Aggregate to monthly within the selected quarter
     var monthly = aggregateMonthly(rows);
     chartLabels = monthly.map(function(m){return m.label;});
-    cuVals = monthly.map(function(m){return m.CU_pct;});
-    procVals = monthly.map(function(m){return m.Proc_pct;});
+    cuVals = monthly.map(function(m){return isHoursMode ? m.chargeable : m.CU_pct;});
+    procVals = monthly.map(function(m){return isHoursMode ? m.processed : m.Proc_pct;});
     taData = monthly;
     drillable = monthly.map(function(m){return {quarter:execDrill.quarter, month:m.Month};});
   } else {
     // Weekly view — no further drilldown
     chartLabels = rows.map(function(r){return wLabel(r.week_label);});
-    cuVals = rows.map(function(r){return r.CU_pct;});
-    procVals = rows.map(function(r){return r.Proc_pct;});
-    taData = rows.map(function(r){return {label:wLabel(r.week_label),Illness_pct:r.Illness_pct,Vacation_pct:r.Vacation_pct,OtherTA_pct:r.OtherTA_pct};});
+    cuVals = rows.map(function(r){return isHoursMode ? r.chargeable : r.CU_pct;});
+    procVals = rows.map(function(r){return isHoursMode ? r.processed : r.Proc_pct;});
+    taData = rows.map(function(r){return {
+      label:wLabel(r.week_label),
+      Illness_pct:r.Illness_pct,
+      Vacation_pct:r.Vacation_pct,
+      OtherTA_pct:r.OtherTA_pct,
+      ill_hrs: r.Illness_pct * r.avail_hrs / 100,
+      vac_hrs: r.Vacation_pct * r.avail_hrs / 100,
+      other_hrs: r.OtherTA_pct * r.avail_hrs / 100
+    };});
     drillable = null; // no more drilling
   }
 
   var cuC = getOrInit('exec-cu-chart');
   if(cuC){
     cuC.setOption({
-      tooltip:{trigger:'axis',formatter:function(p){return '<b>'+p[0].name+'</b><br/>Avg CU: '+p[0].value.toFixed(1)+'%'+(drillable?' — click to drill':'');}},
+      tooltip:{trigger:'axis',formatter:function(p){
+        var valStr = isHoursMode ? p[0].value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : p[0].value.toFixed(1)+'%';
+        return '<b>'+p[0].name+'</b><br/>' + (isHoursMode ? 'Chargeable Hours' : 'Avg CU') + ': '+valStr+(drillable?' — click to drill':'');
+      }},
       xAxis:{type:'category',data:chartLabels,axisLabel:{rotate:30,fontSize:11}},
-      yAxis:{type:'value',min:50,max:115,axisLabel:{formatter:'{value}%'}},
-      series:[{type:'bar',data:cuVals.map(function(v){return {value:v,itemStyle:{color:v>=90?'#198038':v>=80?'#0f62fe':'#da1e28'}};}),
-        label:{show:true,position:'top',formatter:function(p){return p.value.toFixed(1)+'%';},fontSize:11},
-        markLine:{silent:true,data:[{yAxis:85,lineStyle:{color:'#f1620a',type:'dashed'},label:{formatter:'Target 85%'}}]},
+      yAxis:{type:'value',min: isHoursMode ? null : 50, max: isHoursMode ? null : 115, axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'}},
+      series:[{type:'bar',data:cuVals.map(function(v, i){
+          var cuPct = isHoursMode ? (execDrill.level === 'quarter' ? quarterly[i].CU_pct : execDrill.level === 'month' ? monthly[i].CU_pct : rows[i].CU_pct) : v;
+          var color = cuPct>=90?'#198038':cuPct>=80?'#0f62fe':'#da1e28';
+          return {value:v,itemStyle:{color:color}};
+        }),
+        label:{show:true,position:'top',formatter:function(p){
+          return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : p.value.toFixed(1)+'%';
+        },fontSize:11},
+        markLine: isHoursMode ? null : {silent:true,data:[{yAxis:85,lineStyle:{color:'#f1620a',type:'dashed'},label:{formatter:'Target 85%'}}]},
         cursor: drillable ? 'pointer' : 'default'
       }],
-      grid:{left:50,right:20,top:25,bottom:50}
+      grid:{left:60,right:20,top:25,bottom:50}
     });
     cuC.off('click');
     if(drillable){
@@ -680,15 +807,20 @@ function renderExecutive(){
   var procC = getOrInit('exec-proc-chart');
   if(procC){
     procC.setOption({
-      tooltip:{trigger:'axis',formatter:function(p){return '<b>'+p[0].name+'</b><br/>Avg Proc: '+p[0].value.toFixed(1)+'%'+(drillable?' — click to drill':'');}},
+      tooltip:{trigger:'axis',formatter:function(p){
+        var valStr = isHoursMode ? p[0].value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : p[0].value.toFixed(1)+'%';
+        return '<b>'+p[0].name+'</b><br/>' + (isHoursMode ? 'Processed Hours' : 'Avg Proc') + ': '+valStr+(drillable?' — click to drill':'');
+      }},
       xAxis:{type:'category',data:chartLabels,axisLabel:{rotate:30,fontSize:11}},
-      yAxis:{type:'value',min:90,axisLabel:{formatter:'{value}%'}},
+      yAxis:{type:'value',min: isHoursMode ? null : 90, axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'}},
       series:[{type:'bar',data:procVals,itemStyle:{color:'#198038'},
-        label:{show:true,position:'top',formatter:function(p){return parseFloat(p.value).toFixed(1)+'%';},fontSize:11},
-        markLine:{silent:true,data:[{yAxis:100,lineStyle:{color:'#da1e28',type:'dashed'},label:{formatter:'100%'}}]},
+        label:{show:true,position:'top',formatter:function(p){
+          return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : parseFloat(p.value).toFixed(1)+'%';
+        },fontSize:11},
+        markLine: isHoursMode ? null : {silent:true,data:[{yAxis:100,lineStyle:{color:'#da1e28',type:'dashed'},label:{formatter:'100%'}}]},
         cursor: drillable ? 'pointer' : 'default'
       }],
-      grid:{left:50,right:20,top:25,bottom:50}
+      grid:{left:60,right:20,top:25,bottom:50}
     });
     procC.off('click');
     if(drillable){
@@ -710,17 +842,62 @@ function renderExecutive(){
 
   var taC = getOrInit('exec-ta-chart');
   if(taC){
+    var seriesData = [
+      {
+        name:'Illness',
+        data: taData.map(function(r){return isHoursMode ? (r.ill_hrs != null ? r.ill_hrs : (r.Illness_pct * r.avail_hrs / 100)) : r.Illness_pct;}),
+        color: '#da1e28'
+      },
+      {
+        name:'Vacation',
+        data: taData.map(function(r){return isHoursMode ? (r.vac_hrs != null ? r.vac_hrs : (r.Vacation_pct * r.avail_hrs / 100)) : r.Vacation_pct;}),
+        color: '#7c5cd8'
+      },
+      {
+        name:'Other TA',
+        data: taData.map(function(r){return isHoursMode ? (r.other_hrs != null ? r.other_hrs : (r.OtherTA_pct * r.avail_hrs / 100)) : r.OtherTA_pct;}),
+        color: '#f1620a'
+      }
+    ];
+
     taC.setOption({
-      tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+      tooltip:{
+        trigger:'axis',
+        axisPointer:{type:'shadow'},
+        formatter: function(p) {
+          var html = '<b>'+p[0].name+'</b><br/>';
+          p.forEach(function(item) {
+            var valStr = isHoursMode ? item.value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : item.value.toFixed(1)+'%';
+            html += item.marker + item.seriesName + ': ' + valStr + '<br/>';
+          });
+          if (drillable) html += '<span style="font-size:11px;color:#a8b0b9"> — click to drill</span>';
+          return html;
+        }
+      },
       legend:{top:0,data:['Illness','Vacation','Other TA'],textStyle:{fontSize:11}},
       xAxis:{type:'category',data:taData.map(function(r){return r.label;}),axisLabel:{rotate:30,fontSize:11}},
-      yAxis:{type:'value',axisLabel:{formatter:'{value}%'}},
-      series:[
-        {name:'Illness',type:'bar',stack:'ta',data:taData.map(function(r){return r.Illness_pct;}),itemStyle:{color:'#da1e28'},label:{show:true,position:'inside',formatter:function(p){return p.value>0?parseFloat(p.value).toFixed(1)+'%':'';},fontSize:10,color:'#fff'},cursor:drillable?'pointer':'default'},
-        {name:'Vacation',type:'bar',stack:'ta',data:taData.map(function(r){return r.Vacation_pct;}),itemStyle:{color:'#7c5cd8'},label:{show:true,position:'inside',formatter:function(p){return p.value>0?parseFloat(p.value).toFixed(1)+'%':'';},fontSize:10,color:'#fff'},cursor:drillable?'pointer':'default'},
-        {name:'Other TA',type:'bar',stack:'ta',data:taData.map(function(r){return r.OtherTA_pct;}),itemStyle:{color:'#f1620a'},label:{show:true,position:'inside',formatter:function(p){return p.value>0?parseFloat(p.value).toFixed(1)+'%':'';},fontSize:10,color:'#fff'},cursor:drillable?'pointer':'default'},
-      ],
-      grid:{left:50,right:20,top:30,bottom:50}
+      yAxis:{type:'value',axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'}},
+      series: seriesData.map(function(s){
+        return {
+          name: s.name,
+          type: 'bar',
+          stack: 'ta',
+          data: s.data,
+          itemStyle: {color: s.color},
+          label: {
+            show: true,
+            position: 'inside',
+            formatter: function(p){
+              if (p.value <= 0) return '';
+              return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : p.value.toFixed(1)+'%';
+            },
+            fontSize: 10,
+            color: '#fff'
+          },
+          cursor: drillable ? 'pointer' : 'default'
+        };
+      }),
+      grid:{left:60,right:20,top:30,bottom:50}
     });
     taC.off('click');
     if(drillable){
@@ -767,74 +944,128 @@ function renderPerformance(){
   var rows = filterWeekly(q, null, null, yr, proj);
   if(!rows.length) return;
   var labels = rows.map(r=>wLabel(r.week_label));
+  var cuVals = rows.map(r=> isHoursMode ? r.chargeable : r.CU_pct);
+  var procVals = rows.map(r=> isHoursMode ? r.processed : r.Proc_pct);
 
   var cuC = getOrInit('perf-cu-chart');
-  if(cuC) cuC.setOption({
-    tooltip:{trigger:'axis'},
-    xAxis:{type:'category',data:labels,axisLabel:{rotate:45,fontSize:10}},
-    yAxis:{type:'value',min:50,max:120,axisLabel:{formatter:'{value}%'}},
-    series:[{name:'CU %',type:'bar',
-      data:rows.map(r=>({value:r.CU_pct,itemStyle:{color:r.CU_pct>=perfTarget?'#198038':r.CU_pct>=perfTarget-10?'#f1620a':'#da1e28'}})),
-      label:{show:true,position:'top',formatter:function(p){return p.value.toFixed(1)+'%';},fontSize:10},
-      markLine:{silent:true,data:[{yAxis:perfTarget,lineStyle:{color:'#0f62fe',type:'dashed'},label:{formatter:'Target '+perfTarget+'%'}}]}
-    }],
-    grid:{left:50,right:20,top:25,bottom:65}
-  });
+  if(cuC) {
+    var targetAvg = avg(rows.map(r => r.avail_hrs)) * perfTarget / 100;
+    cuC.setOption({
+      tooltip:{trigger:'axis', formatter: function(p){
+        var valStr = isHoursMode ? p[0].value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : p[0].value.toFixed(1)+'%';
+        return '<b>'+p[0].name+'</b><br/>CU: '+valStr;
+      }},
+      xAxis:{type:'category',data:labels,axisLabel:{rotate:45,fontSize:10}},
+      yAxis:{type:'value',min: isHoursMode ? null : 50, max: isHoursMode ? null : 120, axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'}},
+      series:[{name:'CU %',type:'bar',
+        data:rows.map(function(r){
+          var val = isHoursMode ? r.chargeable : r.CU_pct;
+          return {value:val,itemStyle:{color:r.CU_pct>=perfTarget?'#198038':r.CU_pct>=perfTarget-10?'#f1620a':'#da1e28'}};
+        }),
+        label:{show:true,position:'top',formatter:function(p){
+          return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : p.value.toFixed(1)+'%';
+        },fontSize:10},
+        markLine: {
+          silent: true,
+          data: isHoursMode ? [
+            {yAxis: targetAvg, lineStyle: {color: '#0f62fe', type: 'dashed'}, label: {formatter: 'Avg Target ' + Math.round(targetAvg) + 'h'}}
+          ] : [
+            {yAxis: perfTarget, lineStyle: {color: '#0f62fe', type: 'dashed'}, label: {formatter: 'Target ' + perfTarget + '%'}}
+          ]
+        }
+      }],
+      grid:{left:60,right:20,top:25,bottom:65}
+    });
+  }
 
   var procC = getOrInit('perf-proc-chart');
   if(procC) procC.setOption({
-    tooltip:{trigger:'axis'},
+    tooltip:{trigger:'axis', formatter: function(p){
+      var valStr = isHoursMode ? p[0].value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : p[0].value.toFixed(1)+'%';
+      return '<b>'+p[0].name+'</b><br/>Proc: '+valStr;
+    }},
     xAxis:{type:'category',data:labels,axisLabel:{rotate:45,fontSize:10}},
-    yAxis:{type:'value',min:95,axisLabel:{formatter:'{value}%'}},
-    series:[{name:'Proc %',type:'bar',data:rows.map(r=>r.Proc_pct),itemStyle:{color:'#198038'},
-      label:{show:true,position:'top',formatter:function(p){return parseFloat(p.value).toFixed(1)+'%';},fontSize:10},
-      markLine:{silent:true,data:[{yAxis:100,lineStyle:{color:'#da1e28',type:'dashed'},label:{formatter:'100%'}}]}
+    yAxis:{type:'value',min: isHoursMode ? null : 95,axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'}},
+    series:[{name:'Proc %',type:'bar',data:procVals,itemStyle:{color:'#198038'},
+      label:{show:true,position:'top',formatter:function(p){
+        return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : parseFloat(p.value).toFixed(1)+'%';
+      },fontSize:10},
+      markLine: isHoursMode ? null : {silent:true,data:[{yAxis:100,lineStyle:{color:'#da1e28',type:'dashed'},label:{formatter:'100%'}}]}
     }],
-    grid:{left:50,right:20,top:25,bottom:65}
+    grid:{left:60,right:20,top:25,bottom:65}
   });
 
   // Monthly aggregated
   var monthly = {};
   rows.forEach(function(r){
     var k='M'+r.Month;
-    if(!monthly[k]) monthly[k]={cu:[],proc:[],m:r.Month};
+    if(!monthly[k]) monthly[k]={cu_hrs:0, proc_hrs:0, avail_hrs:0, cu:[],proc:[],m:r.Month};
+    monthly[k].cu_hrs += r.chargeable;
+    monthly[k].proc_hrs += r.processed;
+    monthly[k].avail_hrs += r.avail_hrs;
     monthly[k].cu.push(r.CU_pct);
     monthly[k].proc.push(r.Proc_pct);
   });
   var mkeys = Object.keys(monthly).sort(function(a,b){return monthly[a].m-monthly[b].m;});
   var mLabels = mkeys.map(function(k){return MONTHS[monthly[k].m];});
-  var mCU = mkeys.map(function(k){return +avg(monthly[k].cu).toFixed(2);});
-  var mProc = mkeys.map(function(k){return +avg(monthly[k].proc).toFixed(2);});
+  var mCU = mkeys.map(function(k){return isHoursMode ? monthly[k].cu_hrs : +avg(monthly[k].cu).toFixed(2);});
+  var mProc = mkeys.map(function(k){return isHoursMode ? monthly[k].proc_hrs : +avg(monthly[k].proc).toFixed(2);});
 
   var mcuC = getOrInit('perf-monthly-cu');
-  if(mcuC) mcuC.setOption({
-    tooltip:{trigger:'axis'},
-    xAxis:{type:'category',data:mLabels},
-    yAxis:{type:'value',min:70,axisLabel:{formatter:'{value}%'}},
-    series:[{type:'bar',data:mCU.map(function(v){return {value:v,itemStyle:{color:v>=90?'#198038':v>=80?'#f1620a':'#da1e28'}};}),
-      label:{show:true,position:'top',formatter:function(p){return p.value.toFixed(1)+'%';},fontSize:11},
-      markLine:{silent:true,data:[{yAxis:85,lineStyle:{color:'#0f62fe',type:'dashed'}}]}
-    }],
-    grid:{left:50,right:20,top:30,bottom:40}
-  });
+  if(mcuC) {
+    mcuC.setOption({
+      tooltip:{trigger:'axis', formatter: function(p){
+        var valStr = isHoursMode ? p[0].value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : p[0].value.toFixed(1)+'%';
+        return '<b>'+p[0].name+'</b><br/>CU: '+valStr;
+      }},
+      xAxis:{type:'category',data:mLabels},
+      yAxis:{type:'value',min: isHoursMode ? null : 70,axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'}},
+      series:[{type:'bar',data:mCU.map(function(v, i){
+        var cuPct = isHoursMode ? (monthly[mkeys[i]].cu_hrs / monthly[mkeys[i]].avail_hrs * 100) : v;
+        var color = cuPct>=90?'#198038':cuPct>=80?'#f1620a':'#da1e28';
+        return {value:v,itemStyle:{color:color}};
+      }),
+        label:{show:true,position:'top',formatter:function(p){
+          return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : p.value.toFixed(1)+'%';
+        },fontSize:11},
+        markLine: isHoursMode ? null : {silent:true,data:[{yAxis:85,lineStyle:{color:'#0f62fe',type:'dashed'}}]}
+      }],
+      grid:{left:60,right:20,top:30,bottom:40}
+    });
+  }
 
   var mprocC = getOrInit('perf-monthly-proc');
   if(mprocC) mprocC.setOption({
-    tooltip:{trigger:'axis'},
+    tooltip:{trigger:'axis', formatter: function(p){
+      var valStr = isHoursMode ? p[0].value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : p[0].value.toFixed(1)+'%';
+      return '<b>'+p[0].name+'</b><br/>Proc: '+valStr;
+    }},
     xAxis:{type:'category',data:mLabels},
-    yAxis:{type:'value',min:95,axisLabel:{formatter:'{value}%'}},
+    yAxis:{type:'value',min: isHoursMode ? null : 95,axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'}},
     series:[{type:'bar',data:mProc,itemStyle:{color:'#198038'},
-      label:{show:true,position:'top',formatter:function(p){return parseFloat(p.value).toFixed(1)+'%';},fontSize:11}
+      label:{show:true,position:'top',formatter:function(p){
+        return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : parseFloat(p.value).toFixed(1)+'%';
+      },fontSize:11}
     }],
-    grid:{left:50,right:20,top:30,bottom:40}
+    grid:{left:60,right:20,top:30,bottom:40}
   });
 
   // Table
   var tableEl = document.getElementById('perf-table');
-  var html = '<table><thead><tr><th>Week</th><th>Month</th><th>Quarter</th><th>CU %</th><th>Proc %</th><th>Illness %</th><th>Vacation %</th><th>Other TA %</th><th>Avail Hrs</th></tr></thead><tbody>';
+  var colHeaders = isHoursMode ?
+    '<tr><th>Week</th><th>Month</th><th>Quarter</th><th>Chargeable Hrs</th><th>Processed Hrs</th><th>Illness Hrs</th><th>Vacation Hrs</th><th>Other TA Hrs</th><th>Avail Hrs</th></tr>' :
+    '<tr><th>Week</th><th>Month</th><th>Quarter</th><th>CU %</th><th>Proc %</th><th>Illness %</th><th>Vacation %</th><th>Other TA %</th><th>Avail Hrs</th></tr>';
+  
+  var html = '<table><thead>' + colHeaders + '</thead><tbody>';
   rows.forEach(function(r){
     var cuCls = pillClass(r.CU_pct,80,90);
-    html += '<tr><td>'+r.week_label+'</td><td>'+MONTHS[r.Month]+'</td><td>'+r.Quarter+'</td><td><span class="pill '+cuCls+'">'+pct(r.CU_pct)+'</span></td><td>'+pct(r.Proc_pct)+'</td><td>'+pct(r.Illness_pct)+'</td><td>'+pct(r.Vacation_pct)+'</td><td>'+pct(r.OtherTA_pct)+'</td><td>'+r.avail_hrs.toLocaleString()+'</td></tr>';
+    var cuVal = isHoursMode ? r.chargeable.toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.CU_pct);
+    var procVal = isHoursMode ? r.processed.toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.Proc_pct);
+    var illVal = isHoursMode ? (r.Illness_pct * r.avail_hrs / 100).toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.Illness_pct);
+    var vacVal = isHoursMode ? (r.Vacation_pct * r.avail_hrs / 100).toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.Vacation_pct);
+    var otaVal = isHoursMode ? (r.OtherTA_pct * r.avail_hrs / 100).toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.OtherTA_pct);
+    
+    html += '<tr><td>'+r.week_label+'</td><td>'+MONTHS[r.Month]+'</td><td>'+r.Quarter+'</td><td><span class="pill '+cuCls+'">'+cuVal+'</span></td><td>'+procVal+'</td><td>'+illVal+'</td><td>'+vacVal+'</td><td>'+otaVal+'</td><td>'+r.avail_hrs.toLocaleString()+'</td></tr>';
   });
   html += '</tbody></table>';
   tableEl.innerHTML = html;
@@ -851,52 +1082,101 @@ function renderTimeaway(){
   var avgIll = avg(rows.map(r=>r.Illness_pct));
   var avgVac = avg(rows.map(r=>r.Vacation_pct));
   var avgOther = avg(rows.map(r=>r.OtherTA_pct));
+
+  // Total hours across selected period
+  var totalAvail = rows.reduce((sum, r) => sum + r.avail_hrs, 0);
+  var totalIllHrs = rows.reduce((sum, r) => sum + (r.Illness_pct * r.avail_hrs / 100), 0);
+  var totalVacHrs = rows.reduce((sum, r) => sum + (r.Vacation_pct * r.avail_hrs / 100), 0);
+  var totalOtherTAHrs = rows.reduce((sum, r) => sum + (r.OtherTA_pct * r.avail_hrs / 100), 0);
+  var totalCombinedTAHrs = totalIllHrs + totalVacHrs + totalOtherTAHrs;
+
   var maxIll = Math.max.apply(null,rows.map(r=>r.Illness_pct));
   var maxVac = Math.max.apply(null,rows.map(r=>r.Vacation_pct));
   var illWeek = rows.find(r=>r.Illness_pct===maxIll);
   var vacWeek = rows.find(r=>r.Vacation_pct===maxVac);
 
-  document.getElementById('ta-kpis').innerHTML = [
+  var maxIllHrs = Math.max.apply(null,rows.map(r=>r.Illness_pct * r.avail_hrs / 100));
+  var maxVacHrs = Math.max.apply(null,rows.map(r=>r.Vacation_pct * r.avail_hrs / 100));
+  var illWeekHrs = rows.find(r=> (r.Illness_pct * r.avail_hrs / 100) === maxIllHrs);
+  var vacWeekHrs = rows.find(r=> (r.Vacation_pct * r.avail_hrs / 100) === maxVacHrs);
+
+  var kpisHTML = isHoursMode ? [
+    {label:'Total Illness Hours',val:totalIllHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:avgIll>3.5?'red':avgIll>2.5?'orange':'green'},
+    {label:'Peak Illness Week (Hrs)',val:maxIllHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:illWeekHrs?illWeekHrs.week_label:'—',cls:'red'},
+    {label:'Total Vacation Hours',val:totalVacHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:'purple'},
+    {label:'Peak Vacation Week (Hrs)',val:maxVacHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:vacWeekHrs?vacWeekHrs.week_label:'—',cls:'purple'},
+    {label:'Total Other TA Hours',val:totalOtherTAHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:''},
+    {label:'Combined TA Hours',val:totalCombinedTAHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Illness+Vac+Other total',cls:(avgIll+avgVac+avgOther)>15?'red':''},
+  ] : [
     {label:'Avg Illness %',val:avgIll.toFixed(2)+'%',sub:'of Available Hrs',cls:avgIll>3.5?'red':avgIll>2.5?'orange':'green'},
     {label:'Peak Illness Week',val:maxIll.toFixed(2)+'%',sub:illWeek?illWeek.week_label:'—',cls:'red'},
     {label:'Avg Vacation %',val:avgVac.toFixed(1)+'%',sub:'of Available Hrs',cls:'purple'},
     {label:'Peak Vacation Week',val:maxVac.toFixed(1)+'%',sub:vacWeek?vacWeek.week_label:'—',cls:'purple'},
     {label:'Avg Other TA %',val:avgOther.toFixed(2)+'%',sub:'of Available Hrs',cls:''},
     {label:'Combined TA %',val:(avgIll+avgVac+avgOther).toFixed(1)+'%',sub:'Illness+Vac+Other avg',cls:(avgIll+avgVac+avgOther)>15?'red':''},
-  ].map(k=>'<div class="kpi-card '+k.cls+'"><div class="label">'+k.label+'</div><div class="value">'+k.val+'</div><div class="sub">'+k.sub+'</div></div>').join('');
+  ];
+
+  document.getElementById('ta-kpis').innerHTML = kpisHTML.map(k=>'<div class="kpi-card '+k.cls+'"><div class="label">'+k.label+'</div><div class="value">'+k.val+'</div><div class="sub">'+k.sub+'</div></div>').join('');
 
   function mkLineChart(id, data, color, label){
     var c = getOrInit(id);
     if(!c) return;
     var meanVal = avg(data);
     c.setOption({
-      tooltip:{trigger:'axis'},
+      tooltip:{trigger:'axis', formatter: function(p){
+        var valStr = isHoursMode ? p[0].value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : p[0].value.toFixed(1)+'%';
+        return '<b>'+p[0].name+'</b><br/>'+label+': '+valStr;
+      }},
       xAxis:{type:'category',data:labels,axisLabel:{rotate:45,fontSize:10}},
-      yAxis:{type:'value',min:0,axisLabel:{formatter:'{value}%'}},
+      yAxis:{type:'value',min:0,axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'}},
       series:[{name:label,type:'line',data:data,smooth:true,itemStyle:{color:color},
         areaStyle:{color:color+'22'},
-        label:{show:true,position:'top',formatter:function(p){return parseFloat(p.value).toFixed(1)+'%';},fontSize:10,color:color},
-        markLine:{silent:true,data:[{yAxis:meanVal,lineStyle:{color:color,type:'dashed'},label:{formatter:'Avg '+meanVal.toFixed(1)+'%'}}]}
+        label:{show:true,position:'top',formatter:function(p){
+          return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : p.value.toFixed(1)+'%';
+        },fontSize:10,color:color},
+        markLine:{silent:true,data:[{yAxis:meanVal,lineStyle:{color:color,type:'dashed'},label:{formatter: isHoursMode ? 'Avg ' + Math.round(meanVal) + 'h' : 'Avg '+meanVal.toFixed(1)+'%'}}]}
       }],
-      grid:{left:50,right:20,top:20,bottom:65}
+      grid:{left:60,right:20,top:20,bottom:65}
     });
   }
-  mkLineChart('ta-illness-chart',rows.map(r=>r.Illness_pct),'#da1e28','Illness');
-  mkLineChart('ta-vacation-chart',rows.map(r=>r.Vacation_pct),'#7c5cd8','Vacation');
-  mkLineChart('ta-other-chart',rows.map(r=>r.OtherTA_pct),'#f1620a','Other TA');
+  
+  var illnessData = rows.map(r=> isHoursMode ? (r.Illness_pct * r.avail_hrs / 100) : r.Illness_pct);
+  var vacationData = rows.map(r=> isHoursMode ? (r.Vacation_pct * r.avail_hrs / 100) : r.Vacation_pct);
+  var otherData = rows.map(r=> isHoursMode ? (r.OtherTA_pct * r.avail_hrs / 100) : r.OtherTA_pct);
+
+  mkLineChart('ta-illness-chart',illnessData,'#da1e28','Illness');
+  mkLineChart('ta-vacation-chart',vacationData,'#7c5cd8','Vacation');
+  mkLineChart('ta-other-chart',otherData,'#f1620a','Other TA');
 
   var stackC = getOrInit('ta-stack-chart');
   if(stackC) stackC.setOption({
-    tooltip:{trigger:'axis',axisPointer:{type:'cross'}},
+    tooltip:{
+      trigger:'axis',
+      axisPointer:{type:'cross'},
+      formatter: function(p) {
+        var html = '<b>'+p[0].name+'</b><br/>';
+        p.forEach(function(item) {
+          var valStr = isHoursMode ? item.value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : item.value.toFixed(1)+'%';
+          html += item.marker + item.seriesName + ': ' + valStr + '<br/>';
+        });
+        return html;
+      }
+    },
     legend:{top:0,data:['Illness','Vacation','Other TA'],textStyle:{fontSize:11}},
     xAxis:{type:'category',data:labels,axisLabel:{rotate:45,fontSize:10}},
-    yAxis:{type:'value',axisLabel:{formatter:'{value}%'}},
+    yAxis:{type:'value',axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'}},
     series:[
-      {name:'Illness',type:'line',stack:'ta',data:rows.map(r=>r.Illness_pct),areaStyle:{},itemStyle:{color:'#da1e28'},label:{show:true,position:'top',formatter:function(p){return parseFloat(p.value).toFixed(1)+'%';},fontSize:10,color:'#da1e28'}},
-      {name:'Vacation',type:'line',stack:'ta',data:rows.map(r=>r.Vacation_pct),areaStyle:{},itemStyle:{color:'#7c5cd8'},label:{show:true,position:'top',formatter:function(p){return parseFloat(p.value).toFixed(1)+'%';},fontSize:10,color:'#7c5cd8'}},
-      {name:'Other TA',type:'line',stack:'ta',data:rows.map(r=>r.OtherTA_pct),areaStyle:{},itemStyle:{color:'#f1620a'},label:{show:true,position:'top',formatter:function(p){return parseFloat(p.value).toFixed(1)+'%';},fontSize:10,color:'#f1620a'}},
+      {name:'Illness',type:'line',stack:'ta',data:illnessData,areaStyle:{},itemStyle:{color:'#da1e28'},label:{show:true,position:'top',formatter:function(p){
+        return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : p.value.toFixed(1)+'%';
+      },fontSize:10,color:'#da1e28'}},
+      {name:'Vacation',type:'line',stack:'ta',data:vacationData,areaStyle:{},itemStyle:{color:'#7c5cd8'},label:{show:true,position:'top',formatter:function(p){
+        return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : p.value.toFixed(1)+'%';
+      },fontSize:10,color:'#7c5cd8'}},
+      {name:'Other TA',type:'line',stack:'ta',data:otherData,areaStyle:{},itemStyle:{color:'#f1620a'},label:{show:true,position:'top',formatter:function(p){
+        return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : p.value.toFixed(1)+'%';
+      },fontSize:10,color:'#f1620a'}},
     ],
-    grid:{left:50,right:20,top:30,bottom:65}
+    grid:{left:60,right:20,top:30,bottom:65}
   });
 }
 
@@ -925,19 +1205,46 @@ function renderProjects(){
     projAgg[r.Project_Norm].totalCharg += r.CU_pct*r.avail_hrs/100;
     projAgg[r.Project_Norm].totalAvail += r.avail_hrs;
   });
+  
   var projList = Object.entries(projAgg)
     .filter(function(kv){return kv[1].totalAvail>=projMinHrs;})
-    .map(function(kv){return {name:kv[0],cu:+(kv[1].totalCharg/kv[1].totalAvail*100).toFixed(2),avail:kv[1].totalAvail};})
-    .sort(function(a,b){return b.cu-a.cu;});
+    .map(function(kv){return {
+      name:kv[0],
+      cu:+(kv[1].totalCharg/kv[1].totalAvail*100).toFixed(2),
+      chargeable_hrs: kv[1].totalCharg,
+      avail:kv[1].totalAvail
+    };})
+    .sort(function(a,b){return isHoursMode ? b.chargeable_hrs - a.chargeable_hrs : b.cu - a.cu;});
+
+  const rankTitle = document.getElementById('proj-ranking-title');
+  if (rankTitle) {
+    rankTitle.textContent = isHoursMode ? 'Project Hours Ranking (Total Chargeable Hours over period)' : 'Project CU Ranking (Avg % over period)';
+  }
 
   var barC = getOrInit('proj-bar-chart');
   if(barC) barC.setOption({
-    tooltip:{trigger:'axis',formatter:function(p){return '<b>'+p[0].name+'</b><br/>Avg CU: '+p[0].value+'%';}},
-    xAxis:{type:'value',axisLabel:{formatter:'{value}%'},min:0,max:115},
+    tooltip:{trigger:'axis',formatter:function(p){
+      var idx = p[0].dataIndex;
+      var projObj = projList[idx];
+      var valStr = isHoursMode ? projObj.chargeable_hrs.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : projObj.cu.toFixed(1)+'%';
+      return '<b>'+p[0].name+'</b><br/>' + (isHoursMode ? 'Chargeable Hours' : 'Avg CU') + ': '+valStr;
+    }},
+    xAxis:{
+      type:'value',
+      axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'},
+      min:0,
+      max: isHoursMode ? null : 115
+    },
     yAxis:{type:'category',data:projList.map(p=>p.name),axisLabel:{fontSize:11}},
     series:[{type:'bar',
-      data:projList.map(p=>({value:p.cu,itemStyle:{color:p.cu>=90?'#198038':p.cu>=80?'#0f62fe':p.cu>=70?'#f1620a':'#da1e28'}})),
-      label:{show:true,position:'right',formatter:function(p){return p.value.toFixed(1)+'%';},fontSize:11}
+      data:projList.map(function(p){
+        var val = isHoursMode ? p.chargeable_hrs : p.cu;
+        var color = p.cu>=90?'#198038': p.cu>=80?'#0f62fe': p.cu>=70?'#f1620a':'#da1e28';
+        return {value:val,itemStyle:{color:color}};
+      }),
+      label:{show:true,position:'right',formatter:function(p){
+        return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : p.value.toFixed(1)+'%';
+      },fontSize:11}
     }],
     grid:{left:150,right:70,top:10,bottom:40}
   });
@@ -949,20 +1256,32 @@ function renderProjects(){
   var trendSeries = top10.map(function(proj,i){
     var projData = weeks.map(function(w){
       var r = RAW.project_weekly.find(function(x){return x.week_label===w && x.Project_Norm===proj;});
-      return r?r.CU_pct:null;
+      if (!r) return null;
+      return isHoursMode ? (r.CU_pct * r.avail_hrs / 100) : r.CU_pct;
     });
     return {name:proj,type:'line',data:projData,smooth:true,connectNulls:true,itemStyle:{color:PALETTE[i%PALETTE.length]},
-      label:{show:true,position:'top',formatter:function(p){return p.value!=null?parseFloat(p.value).toFixed(0)+'%':'';},fontSize:9,color:PALETTE[i%PALETTE.length]}};
+      label:{show:true,position:'top',formatter:function(p){
+        if (p.value == null) return '';
+        return isHoursMode ? p.value.toLocaleString(undefined, {maximumFractionDigits:0}) : parseFloat(p.value).toFixed(0)+'%';
+      },fontSize:9,color:PALETTE[i%PALETTE.length]}};
   });
 
   var trendC = getOrInit('proj-trend-chart');
   if(trendC) trendC.setOption({
-    tooltip:{trigger:'axis'},
+    tooltip:{trigger:'axis', formatter: function(p){
+      var html = '<b>'+p[0].name+'</b><br/>';
+      p.forEach(function(item) {
+        if (item.value == null) return;
+        var valStr = isHoursMode ? item.value.toLocaleString(undefined, {maximumFractionDigits:1})+' h' : item.value.toFixed(1)+'%';
+        html += item.marker + item.seriesName + ': ' + valStr + '<br/>';
+      });
+      return html;
+    }},
     legend:{type:'scroll',top:0,data:top10,textStyle:{fontSize:11}},
     xAxis:{type:'category',data:wLabels,axisLabel:{rotate:45,fontSize:10}},
-    yAxis:{type:'value',axisLabel:{formatter:'{value}%'},min:30},
+    yAxis:{type:'value',axisLabel:{formatter: isHoursMode ? '{value} h' : '{value}%'},min: isHoursMode ? null : 30},
     series:trendSeries,
-    grid:{left:50,right:20,top:45,bottom:65}
+    grid:{left:60,right:20,top:45,bottom:65}
   });
 }
 
@@ -1120,11 +1439,22 @@ function renderInsights(){
 
   // Summary table
   var tableEl = document.getElementById('insights-table');
-  var html = '<table><thead><tr><th>Week</th><th>Quarter</th><th>CU %</th><th>Proc %</th><th>Illness %</th><th>Vacation %</th><th>Other TA %</th><th>Status</th></tr></thead><tbody>';
+  var colHeaders = isHoursMode ?
+    '<tr><th>Week</th><th>Quarter</th><th>Chargeable Hrs</th><th>Processed Hrs</th><th>Illness Hrs</th><th>Vacation Hrs</th><th>Other TA Hrs</th><th>Status</th></tr>' :
+    '<tr><th>Week</th><th>Quarter</th><th>CU %</th><th>Proc %</th><th>Illness %</th><th>Vacation %</th><th>Other TA %</th><th>Status</th></tr>';
+  
+  var html = '<table><thead>' + colHeaders + '</thead><tbody>';
   rows.forEach(function(r){
     var cuCls = pillClass(r.CU_pct,80,90);
     var status = r.CU_pct>=90?'<span class="pill green">On Track</span>':r.CU_pct>=80?'<span class="pill blue">Watch</span>':'<span class="pill red">Below Target</span>';
-    html += '<tr><td><b>'+r.week_label+'</b></td><td>'+r.Quarter+'</td><td><span class="pill '+cuCls+'">'+pct(r.CU_pct)+'</span></td><td>'+pct(r.Proc_pct)+'</td><td><span class="pill '+(r.Illness_pct>3.5?'red':r.Illness_pct>2.5?'orange':'green')+'">'+pct(r.Illness_pct)+'</span></td><td>'+pct(r.Vacation_pct)+'</td><td>'+pct(r.OtherTA_pct)+'</td><td>'+status+'</td></tr>';
+    
+    var cuVal = isHoursMode ? r.chargeable.toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.CU_pct);
+    var procVal = isHoursMode ? r.processed.toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.Proc_pct);
+    var illVal = isHoursMode ? (r.Illness_pct * r.avail_hrs / 100).toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.Illness_pct);
+    var vacVal = isHoursMode ? (r.Vacation_pct * r.avail_hrs / 100).toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.Vacation_pct);
+    var otaVal = isHoursMode ? (r.OtherTA_pct * r.avail_hrs / 100).toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:1})+'h' : pct(r.OtherTA_pct);
+
+    html += '<tr><td><b>'+r.week_label+'</b></td><td>'+r.Quarter+'</td><td><span class="pill '+cuCls+'">'+cuVal+'</span></td><td>'+procVal+'</td><td><span class="pill '+(r.Illness_pct>3.5?'red':r.Illness_pct>2.5?'orange':'green')+'">'+illVal+'</span></td><td>'+vacVal+'</td><td>'+otaVal+'</td><td>'+status+'</td></tr>';
   });
   html += '</tbody></table>';
   tableEl.innerHTML = html;

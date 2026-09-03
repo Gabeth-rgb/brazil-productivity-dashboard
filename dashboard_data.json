@@ -412,7 +412,7 @@
       "processed": 60736.4,
       "CU_pct": 95.74,
       "Proc_pct": 106.26,
-      "Illness_pct": 2.46,
+      "Illness_pct": 2.47,
       "Vacation_pct": 5.38,
       "OtherTA_pct": 0.99
     },
@@ -508,9 +508,9 @@
       "processed": 58293.4,
       "CU_pct": 96.17,
       "Proc_pct": 105.53,
-      "Illness_pct": 2.53,
-      "Vacation_pct": 4.87,
-      "OtherTA_pct": 1.06
+      "Illness_pct": 2.56,
+      "Vacation_pct": 4.92,
+      "OtherTA_pct": 1.15
     },
     {
       "week_label": "2026-08-WK07",
@@ -524,9 +524,41 @@
       "processed": 57180.3,
       "CU_pct": 94.98,
       "Proc_pct": 104.57,
-      "Illness_pct": 2.31,
-      "Vacation_pct": 5.4,
-      "OtherTA_pct": 1.17
+      "Illness_pct": 2.4,
+      "Vacation_pct": 5.47,
+      "OtherTA_pct": 1.28
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Year": 2026,
+      "Month": 8,
+      "week_num": "WK08",
+      "Quarter": "3Q",
+      "avail_hrs": 54200,
+      "chargeable": 51031.5,
+      "productive": 51250.7,
+      "processed": 57216.7,
+      "CU_pct": 94.15,
+      "Proc_pct": 105.57,
+      "Illness_pct": 2.7,
+      "Vacation_pct": 7.13,
+      "OtherTA_pct": 1.34
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Year": 2026,
+      "Month": 8,
+      "week_num": "WK09",
+      "Quarter": "3Q",
+      "avail_hrs": 53800,
+      "chargeable": 51329.6,
+      "productive": 51569.6,
+      "processed": 56856.7,
+      "CU_pct": 95.41,
+      "Proc_pct": 105.68,
+      "Illness_pct": 2.38,
+      "Vacation_pct": 5.72,
+      "OtherTA_pct": 1.28
     }
   ],
   "hc_monthly": [
@@ -744,7 +776,7 @@
       "month_label": "2026-08",
       "Year": 2026,
       "Month": 8,
-      "HC": 1361,
+      "HC": 1354,
       "Band_avg": 4.13
     }
   ],
@@ -968,7 +1000,7 @@
     {
       "week_label": "2026-01-WK02",
       "Project_Norm": "Acelen - IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -992,7 +1024,7 @@
     {
       "week_label": "2026-01-WK02",
       "Project_Norm": "Burger King IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1016,7 +1048,7 @@
     {
       "week_label": "2026-01-WK02",
       "Project_Norm": "Dow Chemical IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1046,7 +1078,7 @@
     {
       "week_label": "2026-01-WK02",
       "Project_Norm": "Infineum",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1088,13 +1120,13 @@
     {
       "week_label": "2026-01-WK02",
       "Project_Norm": "Naturgy IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
       "week_label": "2026-01-WK02",
       "Project_Norm": "Nike IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1166,7 +1198,7 @@
     {
       "week_label": "2026-01-WK02",
       "Project_Norm": "Verzani IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1178,7 +1210,7 @@
     {
       "week_label": "2026-01-WK03",
       "Project_Norm": "Acelen - IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1202,7 +1234,7 @@
     {
       "week_label": "2026-01-WK03",
       "Project_Norm": "Burger King IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1226,7 +1258,7 @@
     {
       "week_label": "2026-01-WK03",
       "Project_Norm": "Dow Chemical IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1256,7 +1288,7 @@
     {
       "week_label": "2026-01-WK03",
       "Project_Norm": "Infineum",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1298,13 +1330,13 @@
     {
       "week_label": "2026-01-WK03",
       "Project_Norm": "Naturgy IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
       "week_label": "2026-01-WK03",
       "Project_Norm": "Nike IPS",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1376,7 +1408,7 @@
     {
       "week_label": "2026-01-WK03",
       "Project_Norm": "Verzani IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1388,7 +1420,7 @@
     {
       "week_label": "2026-01-WK04",
       "Project_Norm": "Acelen - IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1412,7 +1444,7 @@
     {
       "week_label": "2026-01-WK04",
       "Project_Norm": "Burger King IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1436,7 +1468,7 @@
     {
       "week_label": "2026-01-WK04",
       "Project_Norm": "Dow Chemical IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1502,7 +1534,7 @@
     {
       "week_label": "2026-01-WK04",
       "Project_Norm": "Naturgy IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1574,7 +1606,7 @@
     {
       "week_label": "2026-01-WK04",
       "Project_Norm": "Verzani IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1622,7 +1654,7 @@
     {
       "week_label": "2026-02-WK05",
       "Project_Norm": "Dow Chemical IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1694,7 +1726,7 @@
     {
       "week_label": "2026-02-WK05",
       "Project_Norm": "Nike IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1772,7 +1804,7 @@
     {
       "week_label": "2026-02-WK06",
       "Project_Norm": "Acelen - IPS",
-      "CU_pct": -Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1814,7 +1846,7 @@
     {
       "week_label": "2026-02-WK06",
       "Project_Norm": "Dow Chemical IPS",
-      "CU_pct": -Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1838,7 +1870,7 @@
     {
       "week_label": "2026-02-WK06",
       "Project_Norm": "Igua - IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -1880,7 +1912,7 @@
     {
       "week_label": "2026-02-WK06",
       "Project_Norm": "Naturgy IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -2210,7 +2242,7 @@
     {
       "week_label": "2026-02-WK08",
       "Project_Norm": "Naturgy IPS",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -6154,1661 +6186,2001 @@
       "Project_Norm": "Verzani F&A",
       "CU_pct": 96.27,
       "avail_hrs": 1280
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Automation",
+      "CU_pct": 95.41,
+      "avail_hrs": 1280
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Bombril",
+      "CU_pct": 84.83,
+      "avail_hrs": 1320
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Bradesco",
+      "CU_pct": 96.89,
+      "avail_hrs": 11720
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Burger King HR",
+      "CU_pct": 102.84,
+      "avail_hrs": 920
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "CEMIG",
+      "CU_pct": 95.38,
+      "avail_hrs": 6920
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "DASA",
+      "CU_pct": 103.67,
+      "avail_hrs": 520
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Dow Chemical F&A",
+      "CU_pct": 99.13,
+      "avail_hrs": 2240
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Igua - CT",
+      "CU_pct": 99.94,
+      "avail_hrs": 1000
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Igua - F&A",
+      "CU_pct": 93.4,
+      "avail_hrs": 2840
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Igua - HR",
+      "CU_pct": 92.88,
+      "avail_hrs": 400
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Iron Mountain",
+      "CU_pct": 92.1,
+      "avail_hrs": 480
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Itau",
+      "CU_pct": 90.38,
+      "avail_hrs": 4160
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "McDonald's",
+      "CU_pct": 94.92,
+      "avail_hrs": 2240
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Naturgy CT",
+      "CU_pct": 92.27,
+      "avail_hrs": 1240
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Naturgy F&A",
+      "CU_pct": 116.08,
+      "avail_hrs": 120
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Naturgy HR",
+      "CU_pct": 101.44,
+      "avail_hrs": 160
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Others",
+      "CU_pct": 75.97,
+      "avail_hrs": 1480
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "RPO",
+      "CU_pct": 100.48,
+      "avail_hrs": 640
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Santander RE",
+      "CU_pct": 91.51,
+      "avail_hrs": 2200
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Telefonica",
+      "CU_pct": 100.74,
+      "avail_hrs": 1320
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Vale BPO - F&A",
+      "CU_pct": 88.43,
+      "avail_hrs": 3400
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Vale BPO - HR",
+      "CU_pct": 95.84,
+      "avail_hrs": 4640
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Vale BPO - IPS",
+      "CU_pct": 89.34,
+      "avail_hrs": 1600
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Vale FICO",
+      "CU_pct": 99.38,
+      "avail_hrs": 80
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Project_Norm": "Verzani F&A",
+      "CU_pct": 90.53,
+      "avail_hrs": 1280
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Automation",
+      "CU_pct": 94.19,
+      "avail_hrs": 1280
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Bombril",
+      "CU_pct": 97.56,
+      "avail_hrs": 1160
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Bradesco",
+      "CU_pct": 95.6,
+      "avail_hrs": 11600
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Burger King HR",
+      "CU_pct": 104.23,
+      "avail_hrs": 920
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "CEMIG",
+      "CU_pct": 98.32,
+      "avail_hrs": 6920
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "DASA",
+      "CU_pct": 102.71,
+      "avail_hrs": 520
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Dow Chemical F&A",
+      "CU_pct": 98.32,
+      "avail_hrs": 2240
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Igua - CT",
+      "CU_pct": 91.79,
+      "avail_hrs": 1000
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Igua - F&A",
+      "CU_pct": 98.97,
+      "avail_hrs": 2840
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Igua - HR",
+      "CU_pct": 101.83,
+      "avail_hrs": 400
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Iron Mountain",
+      "CU_pct": 91.69,
+      "avail_hrs": 480
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Itau",
+      "CU_pct": 89.39,
+      "avail_hrs": 4080
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "McDonald's",
+      "CU_pct": 96.35,
+      "avail_hrs": 2200
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Naturgy CT",
+      "CU_pct": 88.17,
+      "avail_hrs": 1240
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Naturgy F&A",
+      "CU_pct": 112.33,
+      "avail_hrs": 120
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Naturgy HR",
+      "CU_pct": 103.0,
+      "avail_hrs": 160
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Others",
+      "CU_pct": 77.42,
+      "avail_hrs": 1480
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "RPO",
+      "CU_pct": 104.29,
+      "avail_hrs": 680
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Santander RE",
+      "CU_pct": 94.18,
+      "avail_hrs": 2160
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Telefonica",
+      "CU_pct": 97.52,
+      "avail_hrs": 1360
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Vale BPO - F&A",
+      "CU_pct": 88.26,
+      "avail_hrs": 3360
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Vale BPO - HR",
+      "CU_pct": 98.94,
+      "avail_hrs": 4600
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Vale BPO - IPS",
+      "CU_pct": 96.99,
+      "avail_hrs": 1640
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Vale FICO",
+      "CU_pct": 99.13,
+      "avail_hrs": 80
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Project_Norm": "Verzani F&A",
+      "CU_pct": 98.84,
+      "avail_hrs": 1280
     }
   ],
   "band_weekly": [
     {
       "week_label": "2026-01-WK01",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 61.75,
       "avail_hrs": 29920
     },
     {
       "week_label": "2026-01-WK01",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 60.16,
       "avail_hrs": 10600
     },
     {
       "week_label": "2026-01-WK01",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 61.57,
       "avail_hrs": 9320
     },
     {
       "week_label": "2026-01-WK01",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 60.44,
       "avail_hrs": 4880
     },
     {
       "week_label": "2026-01-WK01",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 61.9,
       "avail_hrs": 3040
     },
     {
       "week_label": "2026-01-WK01",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 66.29,
       "avail_hrs": 1880
     },
     {
       "week_label": "2026-01-WK01",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 36.07,
       "avail_hrs": 880
     },
     {
       "week_label": "2026-01-WK01",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 47.14,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-01-WK02",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 92.86,
       "avail_hrs": 28680
     },
     {
       "week_label": "2026-01-WK02",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 91.58,
       "avail_hrs": 9480
     },
     {
       "week_label": "2026-01-WK02",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 91.53,
       "avail_hrs": 8840
     },
     {
       "week_label": "2026-01-WK02",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 97.8,
       "avail_hrs": 4760
     },
     {
       "week_label": "2026-01-WK02",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 92.35,
       "avail_hrs": 2920
     },
     {
       "week_label": "2026-01-WK02",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 100.02,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-01-WK02",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 63.5,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-01-WK02",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 20.18,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-01-WK03",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 97.39,
       "avail_hrs": 28560
     },
     {
       "week_label": "2026-01-WK03",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 92.93,
       "avail_hrs": 9480
     },
     {
       "week_label": "2026-01-WK03",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 99.63,
       "avail_hrs": 8840
     },
     {
       "week_label": "2026-01-WK03",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 99.05,
       "avail_hrs": 4800
     },
     {
       "week_label": "2026-01-WK03",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 91.04,
       "avail_hrs": 2920
     },
     {
       "week_label": "2026-01-WK03",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 93.96,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-01-WK03",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 66.69,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-01-WK03",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 70.18,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-01-WK04",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 100.14,
       "avail_hrs": 28560
     },
     {
       "week_label": "2026-01-WK04",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 105.65,
       "avail_hrs": 9480
     },
     {
       "week_label": "2026-01-WK04",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 99.91,
       "avail_hrs": 8800
     },
     {
       "week_label": "2026-01-WK04",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 96.74,
       "avail_hrs": 4800
     },
     {
       "week_label": "2026-01-WK04",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 104.6,
       "avail_hrs": 2880
     },
     {
       "week_label": "2026-01-WK04",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 89.45,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-01-WK04",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 92.79,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-01-WK04",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 58.93,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-02-WK05",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 101.46,
       "avail_hrs": 28480
     },
     {
       "week_label": "2026-02-WK05",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 98.68,
       "avail_hrs": 9480
     },
     {
       "week_label": "2026-02-WK05",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 100.56,
       "avail_hrs": 8880
     },
     {
       "week_label": "2026-02-WK05",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 97.27,
       "avail_hrs": 4840
     },
     {
       "week_label": "2026-02-WK05",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 103.9,
       "avail_hrs": 2880
     },
     {
       "week_label": "2026-02-WK05",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 89.91,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-02-WK05",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 80.39,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-02-WK05",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 64.64,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-02-WK06",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 99.81,
       "avail_hrs": 28360
     },
     {
       "week_label": "2026-02-WK06",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 101.02,
       "avail_hrs": 9320
     },
     {
       "week_label": "2026-02-WK06",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 100.35,
       "avail_hrs": 8960
     },
     {
       "week_label": "2026-02-WK06",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 109.22,
       "avail_hrs": 4760
     },
     {
       "week_label": "2026-02-WK06",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 101.56,
       "avail_hrs": 2880
     },
     {
       "week_label": "2026-02-WK06",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 113.23,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-02-WK06",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 68.18,
       "avail_hrs": 800
     },
     {
       "week_label": "2026-02-WK06",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 94.11,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-02-WK07",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 98.05,
       "avail_hrs": 28120
     },
     {
       "week_label": "2026-02-WK07",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 97.88,
       "avail_hrs": 9320
     },
     {
       "week_label": "2026-02-WK07",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 97.74,
       "avail_hrs": 8960
     },
     {
       "week_label": "2026-02-WK07",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 102.41,
       "avail_hrs": 4680
     },
     {
       "week_label": "2026-02-WK07",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 97.08,
       "avail_hrs": 2840
     },
     {
       "week_label": "2026-02-WK07",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 108.01,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-02-WK07",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 93.39,
       "avail_hrs": 800
     },
     {
       "week_label": "2026-02-WK07",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 91.25,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-02-WK08",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 89.76,
       "avail_hrs": 28080
     },
     {
       "week_label": "2026-02-WK08",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 87.47,
       "avail_hrs": 9280
     },
     {
       "week_label": "2026-02-WK08",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 84.45,
       "avail_hrs": 8920
     },
     {
       "week_label": "2026-02-WK08",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 83.98,
       "avail_hrs": 4640
     },
     {
       "week_label": "2026-02-WK08",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 85.26,
       "avail_hrs": 2800
     },
     {
       "week_label": "2026-02-WK08",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 86.94,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-02-WK08",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 60.68,
       "avail_hrs": 800
     },
     {
       "week_label": "2026-02-WK08",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 46.43,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-03-WK09",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 98.16,
       "avail_hrs": 28040
     },
     {
       "week_label": "2026-03-WK09",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 100.71,
       "avail_hrs": 9240
     },
     {
       "week_label": "2026-03-WK09",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 100.11,
       "avail_hrs": 8880
     },
     {
       "week_label": "2026-03-WK09",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 105.64,
       "avail_hrs": 4520
     },
     {
       "week_label": "2026-03-WK09",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 99.22,
       "avail_hrs": 2760
     },
     {
       "week_label": "2026-03-WK09",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 99.96,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-03-WK09",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 70.79,
       "avail_hrs": 800
     },
     {
       "week_label": "2026-03-WK09",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 103.04,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-03-WK10",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 97.13,
       "avail_hrs": 27800
     },
     {
       "week_label": "2026-03-WK10",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 100.09,
       "avail_hrs": 9240
     },
     {
       "week_label": "2026-03-WK10",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 99.44,
       "avail_hrs": 8640
     },
     {
       "week_label": "2026-03-WK10",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 99.61,
       "avail_hrs": 4560
     },
     {
       "week_label": "2026-03-WK10",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 98.09,
       "avail_hrs": 2760
     },
     {
       "week_label": "2026-03-WK10",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 107.24,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-03-WK10",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 85.5,
       "avail_hrs": 800
     },
     {
       "week_label": "2026-03-WK10",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 64.82,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-03-WK11",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 94.52,
       "avail_hrs": 27760
     },
     {
       "week_label": "2026-03-WK11",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 96.31,
       "avail_hrs": 9240
     },
     {
       "week_label": "2026-03-WK11",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 97.41,
       "avail_hrs": 8600
     },
     {
       "week_label": "2026-03-WK11",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 100.31,
       "avail_hrs": 4560
     },
     {
       "week_label": "2026-03-WK11",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 98.56,
       "avail_hrs": 2840
     },
     {
       "week_label": "2026-03-WK11",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 93.68,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-03-WK11",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 80.41,
       "avail_hrs": 800
     },
     {
       "week_label": "2026-03-WK11",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 81.43,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-03-WK12",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 95.85,
       "avail_hrs": 27480
     },
     {
       "week_label": "2026-03-WK12",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 95.92,
       "avail_hrs": 9120
     },
     {
       "week_label": "2026-03-WK12",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 95.89,
       "avail_hrs": 8640
     },
     {
       "week_label": "2026-03-WK12",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 97.5,
       "avail_hrs": 4600
     },
     {
       "week_label": "2026-03-WK12",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 91.33,
       "avail_hrs": 2840
     },
     {
       "week_label": "2026-03-WK12",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 84.69,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-03-WK12",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 55.2,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-03-WK12",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 67.86,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-03-WK13",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 96.22,
       "avail_hrs": 27400
     },
     {
       "week_label": "2026-03-WK13",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 96.17,
       "avail_hrs": 9160
     },
     {
       "week_label": "2026-03-WK13",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 100.1,
       "avail_hrs": 8640
     },
     {
       "week_label": "2026-03-WK13",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 95.58,
       "avail_hrs": 4520
     },
     {
       "week_label": "2026-03-WK13",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 106.12,
       "avail_hrs": 2840
     },
     {
       "week_label": "2026-03-WK13",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 102.05,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-03-WK13",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 83.22,
       "avail_hrs": 800
     },
     {
       "week_label": "2026-03-WK13",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 66.07,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-04-WK01",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 82.01,
       "avail_hrs": 27280
     },
     {
       "week_label": "2026-04-WK01",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 84.32,
       "avail_hrs": 9120
     },
     {
       "week_label": "2026-04-WK01",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 85.32,
       "avail_hrs": 8640
     },
     {
       "week_label": "2026-04-WK01",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 84.67,
       "avail_hrs": 4480
     },
     {
       "week_label": "2026-04-WK01",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 83.42,
       "avail_hrs": 2840
     },
     {
       "week_label": "2026-04-WK01",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 83.16,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-04-WK01",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 60.48,
       "avail_hrs": 800
     },
     {
       "week_label": "2026-04-WK01",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 59.82,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-04-WK02",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 90.28,
       "avail_hrs": 27960
     },
     {
       "week_label": "2026-04-WK02",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 94.6,
       "avail_hrs": 9160
     },
     {
       "week_label": "2026-04-WK02",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 96.84,
       "avail_hrs": 8560
     },
     {
       "week_label": "2026-04-WK02",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 99.08,
       "avail_hrs": 4480
     },
     {
       "week_label": "2026-04-WK02",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 91.93,
       "avail_hrs": 2920
     },
     {
       "week_label": "2026-04-WK02",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 96.39,
       "avail_hrs": 1800
     },
     {
       "week_label": "2026-04-WK02",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 63.52,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-04-WK02",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 77.68,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-04-WK03",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 97.5,
       "avail_hrs": 28160
     },
     {
       "week_label": "2026-04-WK03",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 95.7,
       "avail_hrs": 9080
     },
     {
       "week_label": "2026-04-WK03",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 97.86,
       "avail_hrs": 8480
     },
     {
       "week_label": "2026-04-WK03",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 100.41,
       "avail_hrs": 4400
     },
     {
       "week_label": "2026-04-WK03",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 96.4,
       "avail_hrs": 2920
     },
     {
       "week_label": "2026-04-WK03",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 88.72,
       "avail_hrs": 1800
     },
     {
       "week_label": "2026-04-WK03",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 88.35,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-04-WK03",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 68.04,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-04-WK04",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 81.07,
       "avail_hrs": 28240
     },
     {
       "week_label": "2026-04-WK04",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 76.58,
       "avail_hrs": 9080
     },
     {
       "week_label": "2026-04-WK04",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 77.32,
       "avail_hrs": 8480
     },
     {
       "week_label": "2026-04-WK04",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 74.53,
       "avail_hrs": 4440
     },
     {
       "week_label": "2026-04-WK04",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 74.24,
       "avail_hrs": 2920
     },
     {
       "week_label": "2026-04-WK04",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 71.68,
       "avail_hrs": 1800
     },
     {
       "week_label": "2026-04-WK04",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 59.65,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-04-WK04",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 75.0,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-05-WK05",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 81.36,
       "avail_hrs": 28320
     },
     {
       "week_label": "2026-05-WK05",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 84.43,
       "avail_hrs": 9160
     },
     {
       "week_label": "2026-05-WK05",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 81.58,
       "avail_hrs": 8440
     },
     {
       "week_label": "2026-05-WK05",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 86.46,
       "avail_hrs": 4440
     },
     {
       "week_label": "2026-05-WK05",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 70.11,
       "avail_hrs": 2960
     },
     {
       "week_label": "2026-05-WK05",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 87.65,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-05-WK05",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 77.12,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-05-WK05",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 55.71,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-05-WK06",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 93.41,
       "avail_hrs": 28120
     },
     {
       "week_label": "2026-05-WK06",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 94.97,
       "avail_hrs": 9160
     },
     {
       "week_label": "2026-05-WK06",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 95.31,
       "avail_hrs": 8400
     },
     {
       "week_label": "2026-05-WK06",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 102.73,
       "avail_hrs": 4480
     },
     {
       "week_label": "2026-05-WK06",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 94.04,
       "avail_hrs": 2920
     },
     {
       "week_label": "2026-05-WK06",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 98.48,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-05-WK06",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 78.43,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-05-WK06",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 89.46,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-05-WK07",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 94.59,
       "avail_hrs": 28280
     },
     {
       "week_label": "2026-05-WK07",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 96.09,
       "avail_hrs": 9080
     },
     {
       "week_label": "2026-05-WK07",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 97.72,
       "avail_hrs": 8320
     },
     {
       "week_label": "2026-05-WK07",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 101.52,
       "avail_hrs": 4480
     },
     {
       "week_label": "2026-05-WK07",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 88.36,
       "avail_hrs": 2920
     },
     {
       "week_label": "2026-05-WK07",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 100.38,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-05-WK07",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 84.98,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-05-WK07",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 65.54,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-05-WK08",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 93.86,
       "avail_hrs": 28280
     },
     {
       "week_label": "2026-05-WK08",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 94.14,
       "avail_hrs": 9080
     },
     {
       "week_label": "2026-05-WK08",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 93.6,
       "avail_hrs": 8320
     },
     {
       "week_label": "2026-05-WK08",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 93.23,
       "avail_hrs": 4480
     },
     {
       "week_label": "2026-05-WK08",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 92.08,
       "avail_hrs": 2920
     },
     {
       "week_label": "2026-05-WK08",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 89.2,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-05-WK08",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 86.64,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-05-WK08",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 49.64,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-06-WK09",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 96.3,
       "avail_hrs": 28280
     },
     {
       "week_label": "2026-06-WK09",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 95.61,
       "avail_hrs": 9080
     },
     {
       "week_label": "2026-06-WK09",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 100.27,
       "avail_hrs": 8320
     },
     {
       "week_label": "2026-06-WK09",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 98.12,
       "avail_hrs": 4480
     },
     {
       "week_label": "2026-06-WK09",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 95.88,
       "avail_hrs": 2840
     },
     {
       "week_label": "2026-06-WK09",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 92.94,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-06-WK09",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 80.4,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-06-WK09",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 71.43,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-06-WK10",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 77.45,
       "avail_hrs": 29720
     },
     {
       "week_label": "2026-06-WK10",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 78.61,
       "avail_hrs": 8840
     },
     {
       "week_label": "2026-06-WK10",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 82.42,
       "avail_hrs": 8280
     },
     {
       "week_label": "2026-06-WK10",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 86.68,
       "avail_hrs": 4440
     },
     {
       "week_label": "2026-06-WK10",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 77.51,
       "avail_hrs": 2800
     },
     {
       "week_label": "2026-06-WK10",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 81.89,
       "avail_hrs": 1800
     },
     {
       "week_label": "2026-06-WK10",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 65.21,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-06-WK10",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 51.79,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-06-WK11",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 95.35,
       "avail_hrs": 29480
     },
     {
       "week_label": "2026-06-WK11",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 97.07,
       "avail_hrs": 8840
     },
     {
       "week_label": "2026-06-WK11",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 102.45,
       "avail_hrs": 8200
     },
     {
       "week_label": "2026-06-WK11",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 97.8,
       "avail_hrs": 4440
     },
     {
       "week_label": "2026-06-WK11",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 98.85,
       "avail_hrs": 2800
     },
     {
       "week_label": "2026-06-WK11",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 96.38,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-06-WK11",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 70.44,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-06-WK11",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 52.86,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-06-WK12",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 93.28,
       "avail_hrs": 30160
     },
     {
       "week_label": "2026-06-WK12",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 96.63,
       "avail_hrs": 8840
     },
     {
       "week_label": "2026-06-WK12",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 101.45,
       "avail_hrs": 8280
     },
     {
       "week_label": "2026-06-WK12",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 93.68,
       "avail_hrs": 4400
     },
     {
       "week_label": "2026-06-WK12",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 97.13,
       "avail_hrs": 2680
     },
     {
       "week_label": "2026-06-WK12",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 88.63,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-06-WK12",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 67.44,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-06-WK12",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 63.57,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-06-WK13",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 94.04,
       "avail_hrs": 30120
     },
     {
       "week_label": "2026-06-WK13",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 99.54,
       "avail_hrs": 8840
     },
     {
       "week_label": "2026-06-WK13",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 100.49,
       "avail_hrs": 8240
     },
     {
       "week_label": "2026-06-WK13",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 96.91,
       "avail_hrs": 4440
     },
     {
       "week_label": "2026-06-WK13",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 96.74,
       "avail_hrs": 2640
     },
     {
       "week_label": "2026-06-WK13",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 96.43,
       "avail_hrs": 1760
     },
     {
       "week_label": "2026-06-WK13",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 69.17,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-06-WK13",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 66.07,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-07-WK01",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 94.54,
       "avail_hrs": 29840
     },
     {
       "week_label": "2026-07-WK01",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 97.96,
       "avail_hrs": 8760
     },
     {
       "week_label": "2026-07-WK01",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 97.23,
       "avail_hrs": 8080
     },
     {
       "week_label": "2026-07-WK01",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 98.11,
       "avail_hrs": 4440
     },
     {
       "week_label": "2026-07-WK01",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 91.57,
       "avail_hrs": 2600
     },
     {
       "week_label": "2026-07-WK01",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 96.26,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-07-WK01",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 71.79,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-07-WK01",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 67.86,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-07-WK02",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 86.01,
       "avail_hrs": 29640
     },
     {
       "week_label": "2026-07-WK02",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 87.95,
       "avail_hrs": 8640
     },
     {
       "week_label": "2026-07-WK02",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 83.06,
       "avail_hrs": 8000
     },
     {
       "week_label": "2026-07-WK02",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 92.17,
       "avail_hrs": 4320
     },
     {
       "week_label": "2026-07-WK02",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 85.71,
       "avail_hrs": 2560
     },
     {
       "week_label": "2026-07-WK02",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 89.36,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-07-WK02",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 64.63,
       "avail_hrs": 840
     },
     {
       "week_label": "2026-07-WK02",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 50.71,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-07-WK03",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 91.88,
       "avail_hrs": 29440
     },
     {
       "week_label": "2026-07-WK03",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 92.14,
       "avail_hrs": 8640
     },
     {
       "week_label": "2026-07-WK03",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 91.87,
       "avail_hrs": 7880
     },
     {
       "week_label": "2026-07-WK03",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 91.68,
       "avail_hrs": 4280
     },
     {
       "week_label": "2026-07-WK03",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 89.86,
       "avail_hrs": 2560
     },
     {
       "week_label": "2026-07-WK03",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 85.41,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-07-WK03",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 67.07,
       "avail_hrs": 880
     },
     {
       "week_label": "2026-07-WK03",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 57.86,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-07-WK04",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 92.51,
       "avail_hrs": 29160
     },
     {
       "week_label": "2026-07-WK04",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 89.67,
       "avail_hrs": 8520
     },
     {
       "week_label": "2026-07-WK04",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 94.17,
       "avail_hrs": 7800
     },
     {
       "week_label": "2026-07-WK04",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 91.81,
       "avail_hrs": 4240
     },
     {
       "week_label": "2026-07-WK04",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 86.6,
       "avail_hrs": 2520
     },
     {
       "week_label": "2026-07-WK04",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 85.46,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-07-WK04",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 61.1,
       "avail_hrs": 880
     },
     {
       "week_label": "2026-07-WK04",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 56.07,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-08-WK05",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 94.9,
       "avail_hrs": 28960
     },
     {
       "week_label": "2026-08-WK05",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 92.56,
       "avail_hrs": 8520
     },
     {
       "week_label": "2026-08-WK05",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 96.43,
       "avail_hrs": 7760
     },
     {
       "week_label": "2026-08-WK05",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 93.47,
       "avail_hrs": 4200
     },
     {
       "week_label": "2026-08-WK05",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 88.76,
       "avail_hrs": 2480
     },
     {
       "week_label": "2026-08-WK05",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 93.88,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-08-WK05",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 68.47,
       "avail_hrs": 880
     },
     {
       "week_label": "2026-08-WK05",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 69.46,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-08-WK06",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 95.66,
       "avail_hrs": 29520
     },
     {
       "week_label": "2026-08-WK06",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 96.07,
       "avail_hrs": 8320
     },
     {
       "week_label": "2026-08-WK06",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 97.95,
       "avail_hrs": 7840
     },
     {
       "week_label": "2026-08-WK06",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 101.69,
       "avail_hrs": 4240
     },
     {
       "week_label": "2026-08-WK06",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 96.87,
       "avail_hrs": 2440
     },
     {
       "week_label": "2026-08-WK06",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 98.99,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-08-WK06",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 74.41,
       "avail_hrs": 880
     },
     {
       "week_label": "2026-08-WK06",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 65.0,
       "avail_hrs": 280
     },
     {
       "week_label": "2026-08-WK07",
-      "Band_Norm": 3,
+      "Band_Norm": 3.0,
       "CU_pct": 94.45,
       "avail_hrs": 29240
     },
     {
       "week_label": "2026-08-WK07",
-      "Band_Norm": 4,
+      "Band_Norm": 4.0,
       "CU_pct": 93.26,
       "avail_hrs": 8160
     },
     {
       "week_label": "2026-08-WK07",
-      "Band_Norm": 5,
+      "Band_Norm": 5.0,
       "CU_pct": 99.48,
       "avail_hrs": 7760
     },
     {
       "week_label": "2026-08-WK07",
-      "Band_Norm": 6,
+      "Band_Norm": 6.0,
       "CU_pct": 103.83,
       "avail_hrs": 4200
     },
     {
       "week_label": "2026-08-WK07",
-      "Band_Norm": 7,
+      "Band_Norm": 7.0,
       "CU_pct": 91.94,
       "avail_hrs": 2440
     },
     {
       "week_label": "2026-08-WK07",
-      "Band_Norm": 8,
+      "Band_Norm": 8.0,
       "CU_pct": 92.27,
       "avail_hrs": 1720
     },
     {
       "week_label": "2026-08-WK07",
-      "Band_Norm": 9,
+      "Band_Norm": 9.0,
       "CU_pct": 68.93,
       "avail_hrs": 880
     },
     {
       "week_label": "2026-08-WK07",
-      "Band_Norm": 10,
+      "Band_Norm": 10.0,
       "CU_pct": 66.79,
       "avail_hrs": 280
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Band_Norm": 3.0,
+      "CU_pct": 94.63,
+      "avail_hrs": 28960
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Band_Norm": 4.0,
+      "CU_pct": 90.12,
+      "avail_hrs": 8080
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Band_Norm": 5.0,
+      "CU_pct": 100.31,
+      "avail_hrs": 7680
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Band_Norm": 6.0,
+      "CU_pct": 100.04,
+      "avail_hrs": 4080
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Band_Norm": 6.5,
+      "CU_pct": 112.5,
+      "avail_hrs": 80
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Band_Norm": 7.0,
+      "CU_pct": 94.4,
+      "avail_hrs": 2440
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Band_Norm": 8.0,
+      "CU_pct": 84.13,
+      "avail_hrs": 1720
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Band_Norm": 9.0,
+      "CU_pct": 59.88,
+      "avail_hrs": 880
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "Band_Norm": 10.0,
+      "CU_pct": 68.39,
+      "avail_hrs": 280
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Band_Norm": 3.0,
+      "CU_pct": 96.06,
+      "avail_hrs": 28720
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Band_Norm": 4.0,
+      "CU_pct": 92.02,
+      "avail_hrs": 8040
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Band_Norm": 5.0,
+      "CU_pct": 101.81,
+      "avail_hrs": 7560
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Band_Norm": 6.0,
+      "CU_pct": 97.83,
+      "avail_hrs": 4080
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Band_Norm": 6.5,
+      "CU_pct": 108.75,
+      "avail_hrs": 80
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Band_Norm": 7.0,
+      "CU_pct": 98.07,
+      "avail_hrs": 2440
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Band_Norm": 8.0,
+      "CU_pct": 86.38,
+      "avail_hrs": 1720
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Band_Norm": 9.0,
+      "CU_pct": 61.03,
+      "avail_hrs": 880
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "Band_Norm": 10.0,
+      "CU_pct": 54.46,
+      "avail_hrs": 280
     }
-  ],
-  "projects": [
-    "Acelen - F&A",
-    "Acelen - IPS",
-    "Automation",
-    "Bombril",
-    "Bradesco",
-    "Burger King HR",
-    "Burger King IPS",
-    "CEMIG",
-    "DASA",
-    "Dow Chemical F&A",
-    "Dow Chemical IPS",
-    "Igua - CT",
-    "Igua - F&A",
-    "Igua - HR",
-    "Igua - IPS",
-    "Infineum",
-    "Iron Mountain",
-    "Itau",
-    "McDonald's",
-    "Naturgy CT",
-    "Naturgy F&A",
-    "Naturgy HR",
-    "Naturgy IPS",
-    "Nike IPS",
-    "Others",
-    "RPA",
-    "RPO",
-    "Santander RE",
-    "Telefonica",
-    "Vale BPO - F&A",
-    "Vale BPO - HR",
-    "Vale BPO - IPS",
-    "Vale FICO",
-    "Verzani F&A",
-    "Verzani HR",
-    "Verzani IPS"
-  ],
-  "managers": [
-    "adriano.lago@ibm.com",
-    "alberto.das.dores.monteiro@ibm.com",
-    "beatriz.marand@ibm.com",
-    "carlos.lopes@ibm.com",
-    "davidson@ibm.com",
-    "eduardo.montarroyos@ibm.com",
-    "favero.mariani@ibm.com",
-    "gausa@br.ibm.com",
-    "guilherme.brito@ibm.com",
-    "janinec@br.ibm.com",
-    "juliana.floeter@ibm.com",
-    "karina.linhares@ibm.com",
-    "lpadilla@cl.ibm.com",
-    "maria.elena.gross@ibm.com",
-    "meires@br.ibm.com",
-    "melendez.a@cr.ibm.com",
-    "misael.colombo@ibm.com",
-    "nelson.neto1@ibm.com",
-    "nohora.bernal@ibm.com",
-    "pdomene@br.ibm.com",
-    "r.andrade@ibm.com",
-    "rbrigatt@br.ibm.com",
-    "robertak@br.ibm.com",
-    "talles.tobias@ibm.com",
-    "tania.mendes@ibm.com",
-    "thaissab@br.ibm.com",
-    "thiagofc@br.ibm.com",
-    "vania.barbosa@ibm.com"
   ],
   "manager_weekly": [
     {
@@ -8330,7 +8702,7 @@
     {
       "week_label": "2026-01-WK04",
       "manager": "maria.elena.gross@ibm.com",
-      "CU_pct": Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -8606,7 +8978,7 @@
     {
       "week_label": "2026-02-WK06",
       "manager": "maria.elena.gross@ibm.com",
-      "CU_pct": -Infinity,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -12392,7 +12764,7 @@
     {
       "week_label": "2026-08-WK07",
       "manager": "r.andrade@ibm.com",
-      "CU_pct": NaN,
+      "CU_pct": null,
       "avail_hrs": 0
     },
     {
@@ -12430,6 +12802,138 @@
       "manager": "vania.barbosa@ibm.com",
       "CU_pct": 95.42,
       "avail_hrs": 2680
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "adriano.lago@ibm.com",
+      "CU_pct": 92.33,
+      "avail_hrs": 1040
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "alberto.das.dores.monteiro@ibm.com",
+      "CU_pct": 106.03,
+      "avail_hrs": 960
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "carlos.lopes@ibm.com",
+      "CU_pct": 64.31,
+      "avail_hrs": 160
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "davidson@ibm.com",
+      "CU_pct": 86.83,
+      "avail_hrs": 120
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "eduardo.montarroyos@ibm.com",
+      "CU_pct": 102.25,
+      "avail_hrs": 360
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "favero.mariani@ibm.com",
+      "CU_pct": 102.11,
+      "avail_hrs": 1320
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "gausa@br.ibm.com",
+      "CU_pct": 74.17,
+      "avail_hrs": 120
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "guilherme.brito@ibm.com",
+      "CU_pct": 98.25,
+      "avail_hrs": 840
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "janinec@br.ibm.com",
+      "CU_pct": 86.45,
+      "avail_hrs": 600
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "juliana.floeter@ibm.com",
+      "CU_pct": 87.38,
+      "avail_hrs": 520
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "karina.linhares@ibm.com",
+      "CU_pct": 96.25,
+      "avail_hrs": 1080
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "meires@br.ibm.com",
+      "CU_pct": 92.02,
+      "avail_hrs": 3440
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "misael.colombo@ibm.com",
+      "CU_pct": 110.52,
+      "avail_hrs": 520
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "nelson.neto1@ibm.com",
+      "CU_pct": 97.27,
+      "avail_hrs": 1240
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "pdomene@br.ibm.com",
+      "CU_pct": 83.14,
+      "avail_hrs": 920
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "talles.tobias@ibm.com",
+      "CU_pct": 108.75,
+      "avail_hrs": 200
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "tania.mendes@ibm.com",
+      "CU_pct": 97.56,
+      "avail_hrs": 320
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "thaissab@br.ibm.com",
+      "CU_pct": 96.9,
+      "avail_hrs": 880
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "thiagofc@br.ibm.com",
+      "CU_pct": 96.19,
+      "avail_hrs": 160
+    },
+    {
+      "week_label": "2026-08-WK08",
+      "manager": "vania.barbosa@ibm.com",
+      "CU_pct": 104.61,
+      "avail_hrs": 920
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "manager": "alberto.das.dores.monteiro@ibm.com",
+      "CU_pct": 101.0,
+      "avail_hrs": 40
+    },
+    {
+      "week_label": "2026-08-WK09",
+      "manager": "meires@br.ibm.com",
+      "CU_pct": 100.0,
+      "avail_hrs": 40
     }
   ],
   "band_distribution": [
@@ -14209,21 +14713,21 @@
       "Year": 2026,
       "Month": 8,
       "Band_Norm": 3.0,
-      "count": 729
+      "count": 726
     },
     {
       "month_label": "2026-08",
       "Year": 2026,
       "Month": 8,
       "Band_Norm": 4.0,
-      "count": 203
+      "count": 202
     },
     {
       "month_label": "2026-08",
       "Year": 2026,
       "Month": 8,
       "Band_Norm": 5.0,
-      "count": 192
+      "count": 189
     },
     {
       "month_label": "2026-08",
@@ -14267,5 +14771,73 @@
       "Band_Norm": 10.0,
       "count": 7
     }
+  ],
+  "projects": [
+    "Acelen - F&A",
+    "Acelen - IPS",
+    "Automation",
+    "Bombril",
+    "Bradesco",
+    "Burger King HR",
+    "Burger King IPS",
+    "CEMIG",
+    "DASA",
+    "Dow Chemical F&A",
+    "Dow Chemical IPS",
+    "Igua - CT",
+    "Igua - F&A",
+    "Igua - HR",
+    "Igua - IPS",
+    "Infineum",
+    "Iron Mountain",
+    "Itau",
+    "McDonald's",
+    "Naturgy CT",
+    "Naturgy F&A",
+    "Naturgy HR",
+    "Naturgy IPS",
+    "Nike IPS",
+    "Others",
+    "RPA",
+    "RPO",
+    "Santander RE",
+    "Telefonica",
+    "Vale BPO - F&A",
+    "Vale BPO - HR",
+    "Vale BPO - IPS",
+    "Vale FICO",
+    "Verzani F&A",
+    "Verzani HR",
+    "Verzani IPS"
+  ],
+  "managers": [
+    "adriano.lago@ibm.com",
+    "alberto.das.dores.monteiro@ibm.com",
+    "beatriz.marand@ibm.com",
+    "carlos.lopes@ibm.com",
+    "davidson@ibm.com",
+    "eduardo.montarroyos@ibm.com",
+    "favero.mariani@ibm.com",
+    "gausa@br.ibm.com",
+    "guilherme.brito@ibm.com",
+    "janinec@br.ibm.com",
+    "juliana.floeter@ibm.com",
+    "karina.linhares@ibm.com",
+    "lpadilla@cl.ibm.com",
+    "maria.elena.gross@ibm.com",
+    "meires@br.ibm.com",
+    "melendez.a@cr.ibm.com",
+    "misael.colombo@ibm.com",
+    "nelson.neto1@ibm.com",
+    "nohora.bernal@ibm.com",
+    "pdomene@br.ibm.com",
+    "r.andrade@ibm.com",
+    "rbrigatt@br.ibm.com",
+    "robertak@br.ibm.com",
+    "talles.tobias@ibm.com",
+    "tania.mendes@ibm.com",
+    "thaissab@br.ibm.com",
+    "thiagofc@br.ibm.com",
+    "vania.barbosa@ibm.com"
   ]
 }

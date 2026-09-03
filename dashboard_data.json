@@ -15,9 +15,11 @@
       "Illness_pct": 0.81,
       "Vacation_pct": 10.32,
       "OtherTA_pct": 11.26,
+      "Holiday_pct": 17.42,
       "Illness_hrs": 494.8,
       "Vacation_hrs": 6273.2,
-      "OtherTA_hrs": 6846.3
+      "OtherTA_hrs": 6846.3,
+      "Holiday_hrs": 10592.0
     },
     {
       "week_label": "2026-01-WK02",
@@ -34,9 +36,11 @@
       "Illness_pct": 1.46,
       "Vacation_pct": 12.02,
       "OtherTA_pct": 0.91,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 837.9,
       "Vacation_hrs": 6914.3,
-      "OtherTA_hrs": 522.6
+      "OtherTA_hrs": 522.6,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-01-WK03",
@@ -53,9 +57,11 @@
       "Illness_pct": 1.52,
       "Vacation_pct": 9.78,
       "OtherTA_pct": 0.59,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 870.4,
       "Vacation_hrs": 5620.0,
-      "OtherTA_hrs": 339.1
+      "OtherTA_hrs": 339.1,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-01-WK04",
@@ -72,9 +78,11 @@
       "Illness_pct": 1.74,
       "Vacation_pct": 8.93,
       "OtherTA_pct": 0.54,
+      "Holiday_pct": 0.79,
       "Illness_hrs": 998.4,
       "Vacation_hrs": 5128.6,
-      "OtherTA_hrs": 307.4
+      "OtherTA_hrs": 307.4,
+      "Holiday_hrs": 456.3
     },
     {
       "week_label": "2026-02-WK05",
@@ -91,9 +99,11 @@
       "Illness_pct": 2.69,
       "Vacation_pct": 6.32,
       "OtherTA_pct": 0.57,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1547.4,
       "Vacation_hrs": 3632.0,
-      "OtherTA_hrs": 327.7
+      "OtherTA_hrs": 327.7,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-02-WK06",
@@ -110,9 +120,11 @@
       "Illness_pct": 2.2,
       "Vacation_pct": 4.16,
       "OtherTA_pct": 0.82,
+      "Holiday_pct": 0.03,
       "Illness_hrs": 1257.9,
       "Vacation_hrs": 2374.0,
-      "OtherTA_hrs": 470.7
+      "OtherTA_hrs": 470.7,
+      "Holiday_hrs": 16.0
     },
     {
       "week_label": "2026-02-WK07",
@@ -129,9 +141,11 @@
       "Illness_pct": 2.95,
       "Vacation_pct": 5.2,
       "OtherTA_pct": 0.6,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1674.8,
       "Vacation_hrs": 2954.0,
-      "OtherTA_hrs": 340.0
+      "OtherTA_hrs": 340.0,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-02-WK08",
@@ -148,9 +162,11 @@
       "Illness_pct": 2.1,
       "Vacation_pct": 6.43,
       "OtherTA_pct": 6.14,
+      "Holiday_pct": 3.71,
       "Illness_hrs": 1190.3,
       "Vacation_hrs": 3636.4,
-      "OtherTA_hrs": 3474.8
+      "OtherTA_hrs": 3474.8,
+      "Holiday_hrs": 2099.2
     },
     {
       "week_label": "2026-03-WK09",
@@ -167,9 +183,11 @@
       "Illness_pct": 2.41,
       "Vacation_pct": 5.39,
       "OtherTA_pct": 0.48,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1357.3,
       "Vacation_hrs": 3031.8,
-      "OtherTA_hrs": 268.9
+      "OtherTA_hrs": 268.9,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-03-WK10",
@@ -186,9 +204,11 @@
       "Illness_pct": 2.71,
       "Vacation_pct": 5.25,
       "OtherTA_pct": 0.59,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1511.0,
       "Vacation_hrs": 2933.2,
-      "OtherTA_hrs": 328.4
+      "OtherTA_hrs": 328.4,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-03-WK11",
@@ -205,9 +225,11 @@
       "Illness_pct": 2.71,
       "Vacation_pct": 6.57,
       "OtherTA_pct": 0.82,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1512.6,
       "Vacation_hrs": 3670.0,
-      "OtherTA_hrs": 458.7
+      "OtherTA_hrs": 458.7,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-03-WK12",
@@ -224,9 +246,11 @@
       "Illness_pct": 2.74,
       "Vacation_pct": 8.1,
       "OtherTA_pct": 0.85,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1522.9,
       "Vacation_hrs": 4499.2,
-      "OtherTA_hrs": 473.6
+      "OtherTA_hrs": 473.6,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-03-WK13",
@@ -243,9 +267,11 @@
       "Illness_pct": 2.1,
       "Vacation_pct": 7.5,
       "OtherTA_pct": 0.66,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1164.9,
       "Vacation_hrs": 4154.0,
-      "OtherTA_hrs": 364.9
+      "OtherTA_hrs": 364.9,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-04-WK01",
@@ -262,9 +288,11 @@
       "Illness_pct": 1.56,
       "Vacation_pct": 4.84,
       "OtherTA_pct": 0.65,
+      "Holiday_pct": 17.8,
       "Illness_hrs": 858.6,
       "Vacation_hrs": 2672.9,
-      "OtherTA_hrs": 358.8
+      "OtherTA_hrs": 358.8,
+      "Holiday_hrs": 9823.4
     },
     {
       "week_label": "2026-04-WK02",
@@ -281,9 +309,11 @@
       "Illness_pct": 2.0,
       "Vacation_pct": 8.12,
       "OtherTA_pct": 0.58,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1118.6,
       "Vacation_hrs": 4550.0,
-      "OtherTA_hrs": 325.2
+      "OtherTA_hrs": 325.2,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-04-WK03",
@@ -300,9 +330,11 @@
       "Illness_pct": 2.0,
       "Vacation_pct": 8.0,
       "OtherTA_pct": 0.56,
+      "Holiday_pct": 0.01,
       "Illness_hrs": 1117.5,
       "Vacation_hrs": 4474.8,
-      "OtherTA_hrs": 315.6
+      "OtherTA_hrs": 315.6,
+      "Holiday_hrs": 8.0
     },
     {
       "week_label": "2026-04-WK04",
@@ -319,9 +351,11 @@
       "Illness_pct": 1.78,
       "Vacation_pct": 4.51,
       "OtherTA_pct": 2.04,
+      "Holiday_pct": 18.94,
       "Illness_hrs": 995.9,
       "Vacation_hrs": 2528.6,
-      "OtherTA_hrs": 1142.6
+      "OtherTA_hrs": 1142.6,
+      "Holiday_hrs": 10622.9
     },
     {
       "week_label": "2026-05-WK05",
@@ -338,9 +372,11 @@
       "Illness_pct": 1.94,
       "Vacation_pct": 4.07,
       "OtherTA_pct": 0.51,
+      "Holiday_pct": 18.05,
       "Illness_hrs": 1092.7,
       "Vacation_hrs": 2287.2,
-      "OtherTA_hrs": 288.9
+      "OtherTA_hrs": 288.9,
+      "Holiday_hrs": 10144.4
     },
     {
       "week_label": "2026-05-WK06",
@@ -357,9 +393,11 @@
       "Illness_pct": 2.61,
       "Vacation_pct": 6.83,
       "OtherTA_pct": 0.56,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1461.5,
       "Vacation_hrs": 3823.4,
-      "OtherTA_hrs": 312.3
+      "OtherTA_hrs": 312.3,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-05-WK07",
@@ -376,9 +414,11 @@
       "Illness_pct": 2.69,
       "Vacation_pct": 6.74,
       "OtherTA_pct": 0.87,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1504.6,
       "Vacation_hrs": 3766.4,
-      "OtherTA_hrs": 484.5
+      "OtherTA_hrs": 484.5,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-05-WK08",
@@ -395,9 +435,11 @@
       "Illness_pct": 2.11,
       "Vacation_pct": 4.91,
       "OtherTA_pct": 1.12,
+      "Holiday_pct": 3.21,
       "Illness_hrs": 1182.7,
       "Vacation_hrs": 2747.2,
-      "OtherTA_hrs": 629.0
+      "OtherTA_hrs": 629.0,
+      "Holiday_hrs": 1798.6
     },
     {
       "week_label": "2026-06-WK09",
@@ -414,9 +456,11 @@
       "Illness_pct": 2.48,
       "Vacation_pct": 4.17,
       "OtherTA_pct": 1.06,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1385.4,
       "Vacation_hrs": 2328.0,
-      "OtherTA_hrs": 591.1
+      "OtherTA_hrs": 591.1,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-06-WK10",
@@ -433,9 +477,11 @@
       "Illness_pct": 1.94,
       "Vacation_pct": 3.82,
       "OtherTA_pct": 2.11,
+      "Holiday_pct": 17.86,
       "Illness_hrs": 1106.6,
       "Vacation_hrs": 2180.0,
-      "OtherTA_hrs": 1205.1
+      "OtherTA_hrs": 1205.1,
+      "Holiday_hrs": 10179.4
     },
     {
       "week_label": "2026-06-WK11",
@@ -452,9 +498,11 @@
       "Illness_pct": 2.7,
       "Vacation_pct": 5.01,
       "OtherTA_pct": 1.15,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1528.6,
       "Vacation_hrs": 2835.1,
-      "OtherTA_hrs": 651.1
+      "OtherTA_hrs": 651.1,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-06-WK12",
@@ -471,9 +519,11 @@
       "Illness_pct": 2.56,
       "Vacation_pct": 6.01,
       "OtherTA_pct": 1.16,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1464.9,
       "Vacation_hrs": 3440.0,
-      "OtherTA_hrs": 663.3
+      "OtherTA_hrs": 663.3,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-06-WK13",
@@ -490,9 +540,11 @@
       "Illness_pct": 2.47,
       "Vacation_pct": 5.38,
       "OtherTA_pct": 0.99,
+      "Holiday_pct": 0.03,
       "Illness_hrs": 1409.4,
       "Vacation_hrs": 3077.8,
-      "OtherTA_hrs": 567.1
+      "OtherTA_hrs": 567.1,
+      "Holiday_hrs": 16.0
     },
     {
       "week_label": "2026-07-WK01",
@@ -509,9 +561,11 @@
       "Illness_pct": 2.8,
       "Vacation_pct": 4.89,
       "OtherTA_pct": 2.1,
+      "Holiday_pct": 0.03,
       "Illness_hrs": 1580.9,
       "Vacation_hrs": 2768.0,
-      "OtherTA_hrs": 1185.9
+      "OtherTA_hrs": 1185.9,
+      "Holiday_hrs": 16.0
     },
     {
       "week_label": "2026-07-WK02",
@@ -528,9 +582,11 @@
       "Illness_pct": 1.79,
       "Vacation_pct": 7.07,
       "OtherTA_pct": 1.57,
+      "Holiday_pct": 7.3,
       "Illness_hrs": 1003.0,
       "Vacation_hrs": 3960.0,
-      "OtherTA_hrs": 881.5
+      "OtherTA_hrs": 881.5,
+      "Holiday_hrs": 4086.0
     },
     {
       "week_label": "2026-07-WK03",
@@ -547,9 +603,11 @@
       "Illness_pct": 2.51,
       "Vacation_pct": 9.94,
       "OtherTA_pct": 0.92,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1394.9,
       "Vacation_hrs": 5536.0,
-      "OtherTA_hrs": 513.4
+      "OtherTA_hrs": 513.4,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-07-WK04",
@@ -566,9 +624,11 @@
       "Illness_pct": 2.71,
       "Vacation_pct": 10.54,
       "OtherTA_pct": 1.28,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1491.2,
       "Vacation_hrs": 5808.8,
-      "OtherTA_hrs": 703.3
+      "OtherTA_hrs": 703.3,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-08-WK05",
@@ -585,9 +645,11 @@
       "Illness_pct": 2.49,
       "Vacation_pct": 7.44,
       "OtherTA_pct": 1.19,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1363.2,
       "Vacation_hrs": 4078.5,
-      "OtherTA_hrs": 650.2
+      "OtherTA_hrs": 650.2,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-08-WK06",
@@ -604,9 +666,11 @@
       "Illness_pct": 2.56,
       "Vacation_pct": 4.92,
       "OtherTA_pct": 1.15,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1415.7,
       "Vacation_hrs": 2716.0,
-      "OtherTA_hrs": 636.4
+      "OtherTA_hrs": 636.4,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-08-WK07",
@@ -623,9 +687,11 @@
       "Illness_pct": 2.4,
       "Vacation_pct": 5.47,
       "OtherTA_pct": 1.28,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1313.2,
       "Vacation_hrs": 2992.8,
-      "OtherTA_hrs": 701.6
+      "OtherTA_hrs": 701.6,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-08-WK08",
@@ -642,9 +708,11 @@
       "Illness_pct": 2.7,
       "Vacation_pct": 7.13,
       "OtherTA_pct": 1.34,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1465.2,
       "Vacation_hrs": 3867.0,
-      "OtherTA_hrs": 725.0
+      "OtherTA_hrs": 725.0,
+      "Holiday_hrs": 0.0
     },
     {
       "week_label": "2026-08-WK09",
@@ -661,9 +729,11 @@
       "Illness_pct": 2.38,
       "Vacation_pct": 5.72,
       "OtherTA_pct": 1.28,
+      "Holiday_pct": 0.0,
       "Illness_hrs": 1280.6,
       "Vacation_hrs": 3080.0,
-      "OtherTA_hrs": 686.6
+      "OtherTA_hrs": 686.6,
+      "Holiday_hrs": 0.0
     }
   ],
   "hc_monthly": [

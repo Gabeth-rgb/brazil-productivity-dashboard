@@ -928,7 +928,8 @@ function renderExecutive(){
         symbol:'circle',symbolSize:6,
         lineStyle:{color:'#f1620a',type:'dashed',width:2},
         itemStyle:{color:'#f1620a'},
-        label:{show:false},
+        label:{show:!isHoursMode,position:'bottom',distance:6,color:'#f1620a',fontSize:10,fontWeight:600,
+          formatter:function(p){return p.value!=null?'▸'+p.value.toFixed(1)+'%':''}},
         tooltip:{show:false}
       }],
       grid:{left:60,right:20,top:25,bottom:50}
@@ -1135,7 +1136,8 @@ function renderPerformance(){
         symbol:'circle',symbolSize:5,
         lineStyle:{color:'#0f62fe',type:'dashed',width:2},
         itemStyle:{color:'#0f62fe'},
-        label:{show:false},
+        label:{show:!isHoursMode,position:'bottom',distance:6,color:'#0f62fe',fontSize:10,fontWeight:600,
+          formatter:function(p){return p.value!=null?'▸'+p.value.toFixed(1)+'%':''}},
         tooltip:{show:false}
       }],
       grid:{left:60,right:20,top:25,bottom:65}
@@ -1213,7 +1215,8 @@ function renderPerformance(){
         symbol:'circle',symbolSize:5,
         lineStyle:{color:'#0f62fe',type:'dashed',width:2},
         itemStyle:{color:'#0f62fe'},
-        label:{show:false},
+        label:{show:!isHoursMode,position:'bottom',distance:6,color:'#0f62fe',fontSize:10,fontWeight:600,
+          formatter:function(p){return p.value!=null?'▸'+p.value.toFixed(1)+'%':''}},
         tooltip:{show:false}
       }],
       grid:{left:60,right:20,top:30,bottom:40}

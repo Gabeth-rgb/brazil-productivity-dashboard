@@ -144,9 +144,15 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
     </div>
     <div class="filter-group">
       <label>Project:</label>
-      <select id="exec-project" onchange="execResetDrill()">
-        <option value="all">All Projects</option>
-      </select>
+      <div class="ms-dropdown" id="exec-project-dropdown">
+        <div class="ms-trigger" id="exec-project-trigger" tabindex="0">All Projects</div>
+        <div class="ms-panel" id="exec-project-panel">
+          <label class="ms-option">
+            <input type="checkbox" id="exec-proj-all" value="all" checked onchange="execProjAllChange(this)"/>All Projects
+          </label>
+          <hr class="ms-divider"/>
+        </div>
+      </div>
     </div>
     <div class="filter-group" style="margin-left:auto">
       <label>View Mode:</label>
@@ -355,9 +361,15 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
     </div>
     <div class="filter-group">
       <label>Project:</label>
-      <select id="proj-project" onchange="renderProjects()">
-        <option value="all">All Projects</option>
-      </select>
+      <div class="ms-dropdown" id="proj-project-dropdown">
+        <div class="ms-trigger" id="proj-project-trigger" tabindex="0">All Projects</div>
+        <div class="ms-panel" id="proj-project-panel">
+          <label class="ms-option">
+            <input type="checkbox" id="proj-proj-all" value="all" checked onchange="projProjAllChange(this)"/>All Projects
+          </label>
+          <hr class="ms-divider"/>
+        </div>
+      </div>
     </div>
     <div class="filter-group">
       <label>Min Avail Hrs (filter small projects):</label>
@@ -673,7 +685,7 @@ function renderExecutive(){
   const q = document.getElementById('exec-quarter').value;
   const mf = document.getElementById('exec-month-from').value;
   const mt = document.getElementById('exec-month-to').value;
-  const proj = document.getElementById('exec-project').value;
+  const proj = getExecProjects();
 
   // Apply top-level filters (quarter filter from select only applies when not drilled in)
   var baseRows;
@@ -1245,14 +1257,17 @@ function updateProjFilter(v){
 
 function renderProjects(){
   var q = document.getElementById('proj-quarter').value;
-  var selProj = document.getElementById('proj-project').value;
+  var selProj = getProjProjects();
 
   var weekRows = filterWeekly(q);
   var validWeeks = {};
   weekRows.forEach(function(r){validWeeks[r.week_label]=true;});
 
   var prows = RAW.project_weekly.filter(function(r){return validWeeks[r.week_label];});
-  if(selProj!=='all') prows = prows.filter(function(r){return r.Project_Norm===selProj;});
+  if(selProj !== 'all'){
+    var selArr = Array.isArray(selProj) ? selProj : [selProj];
+    prows = prows.filter(function(r){return selArr.indexOf(r.Project_Norm) !== -1;});
+  }
 
   var projAgg = {};
   prows.forEach(function(r){
@@ -1566,39 +1581,98 @@ function perfProjItemChange(cb){
   renderPerformance();
 }
 
-// ===== INIT =====
-function init(){
-  var projs = RAW.projects;
-  // populate native selects (exec & projects tabs)
-  ['exec-project','proj-project'].forEach(function(id){
-    var sel = document.getElementById(id);
-    if(!sel) return;
-    projs.forEach(function(p){
-      var opt = document.createElement('option');
-      opt.value = p; opt.textContent = p;
-      sel.appendChild(opt);
-    });
-  });
-  // populate multi-select checkbox dropdown for Performance Trends
-  var panel = document.getElementById('perf-project-panel');
+// ===== MULTI-SELECT PROJECT DROPDOWN (Executive View) =====
+function getExecProjects(){
+  var allCb = document.getElementById('exec-proj-all');
+  if(allCb && allCb.checked) return 'all';
+  var checked = Array.from(document.querySelectorAll('#exec-project-panel input[type=checkbox]:not(#exec-proj-all):checked')).map(function(cb){return cb.value;});
+  return checked.length ? checked : 'all';
+}
+
+function execUpdateTriggerLabel(){
+  var allCb = document.getElementById('exec-proj-all');
+  var trigger = document.getElementById('exec-project-trigger');
+  if(!trigger) return;
+  if(allCb && allCb.checked){ trigger.textContent = 'All Projects'; return; }
+  var checked = Array.from(document.querySelectorAll('#exec-project-panel input[type=checkbox]:not(#exec-proj-all):checked')).map(function(cb){return cb.value;});
+  trigger.textContent = checked.length === 0 ? 'All Projects' : checked.length === 1 ? checked[0] : checked.length + ' projects selected';
+}
+
+function execProjAllChange(cb){
+  if(cb.checked) document.querySelectorAll('#exec-project-panel input[type=checkbox]:not(#exec-proj-all)').forEach(function(c){c.checked=false;});
+  execUpdateTriggerLabel();
+  execResetDrill();
+}
+
+function execProjItemChange(cb){
+  if(cb.checked){
+    var allCb = document.getElementById('exec-proj-all');
+    if(allCb) allCb.checked = false;
+  } else {
+    var anyChecked = Array.from(document.querySelectorAll('#exec-project-panel input[type=checkbox]:not(#exec-proj-all):checked')).length > 0;
+    if(!anyChecked){ var a = document.getElementById('exec-proj-all'); if(a) a.checked = true; }
+  }
+  execUpdateTriggerLabel();
+  execResetDrill();
+}
+
+// ===== MULTI-SELECT PROJECT DROPDOWN (Projects Tab) =====
+function getProjProjects(){
+  var allCb = document.getElementById('proj-proj-all');
+  if(allCb && allCb.checked) return 'all';
+  var checked = Array.from(document.querySelectorAll('#proj-project-panel input[type=checkbox]:not(#proj-proj-all):checked')).map(function(cb){return cb.value;});
+  return checked.length ? checked : 'all';
+}
+
+function projUpdateTriggerLabel(){
+  var allCb = document.getElementById('proj-proj-all');
+  var trigger = document.getElementById('proj-project-trigger');
+  if(!trigger) return;
+  if(allCb && allCb.checked){ trigger.textContent = 'All Projects'; return; }
+  var checked = Array.from(document.querySelectorAll('#proj-project-panel input[type=checkbox]:not(#proj-proj-all):checked')).map(function(cb){return cb.value;});
+  trigger.textContent = checked.length === 0 ? 'All Projects' : checked.length === 1 ? checked[0] : checked.length + ' projects selected';
+}
+
+function projProjAllChange(cb){
+  if(cb.checked) document.querySelectorAll('#proj-project-panel input[type=checkbox]:not(#proj-proj-all)').forEach(function(c){c.checked=false;});
+  projUpdateTriggerLabel();
+  renderProjects();
+}
+
+function projProjItemChange(cb){
+  if(cb.checked){
+    var allCb = document.getElementById('proj-proj-all');
+    if(allCb) allCb.checked = false;
+  } else {
+    var anyChecked = Array.from(document.querySelectorAll('#proj-project-panel input[type=checkbox]:not(#proj-proj-all):checked')).length > 0;
+    if(!anyChecked){ var a = document.getElementById('proj-proj-all'); if(a) a.checked = true; }
+  }
+  projUpdateTriggerLabel();
+  renderProjects();
+}
+
+// ===== SHARED HELPER: wire up a multi-select dropdown =====
+function initMsDropdown(dropdownId, panelId, triggerId, allCbId, itemChangeFn, projs){
+  var panel = document.getElementById(panelId);
   if(panel){
     projs.forEach(function(p){
       var lbl = document.createElement('label');
       lbl.className = 'ms-option';
       var cb = document.createElement('input');
       cb.type = 'checkbox'; cb.value = p;
-      cb.addEventListener('change', function(){perfProjItemChange(this);});
+      cb.addEventListener('change', function(){itemChangeFn(this);});
       lbl.appendChild(cb);
       lbl.appendChild(document.createTextNode(p));
       panel.appendChild(lbl);
     });
   }
-  // toggle panel open/close on trigger click
-  var trigger = document.getElementById('perf-project-trigger');
-  var panelEl = document.getElementById('perf-project-panel');
+  var trigger = document.getElementById(triggerId);
+  var panelEl = document.getElementById(panelId);
   if(trigger && panelEl){
     trigger.addEventListener('click', function(e){
       e.stopPropagation();
+      // close all other open panels first
+      document.querySelectorAll('.ms-panel.open').forEach(function(p){ if(p !== panelEl){ p.classList.remove('open'); p.previousElementSibling && p.previousElementSibling.classList.remove('open'); } });
       var isOpen = panelEl.classList.toggle('open');
       trigger.classList.toggle('open', isOpen);
     });
@@ -1609,13 +1683,27 @@ function init(){
         trigger.classList.toggle('open', isOpen);
       }
     });
-    document.addEventListener('click', function(e){
-      if(!document.getElementById('perf-project-dropdown').contains(e.target)){
-        panelEl.classList.remove('open');
-        trigger.classList.remove('open');
+  }
+}
+
+// ===== INIT =====
+function init(){
+  var projs = RAW.projects;
+
+  initMsDropdown('exec-project-dropdown','exec-project-panel','exec-project-trigger','exec-proj-all', execProjItemChange, projs);
+  initMsDropdown('perf-project-dropdown','perf-project-panel','perf-project-trigger','perf-proj-all', perfProjItemChange, projs);
+  initMsDropdown('proj-project-dropdown','proj-project-panel','proj-project-trigger','proj-proj-all', projProjItemChange, projs);
+
+  // Close all dropdowns when clicking outside
+  document.addEventListener('click', function(e){
+    document.querySelectorAll('.ms-dropdown').forEach(function(dd){
+      if(!dd.contains(e.target)){
+        dd.querySelector('.ms-panel').classList.remove('open');
+        dd.querySelector('.ms-trigger').classList.remove('open');
       }
     });
-  }
+  });
+
   renderExecutive();
   window.addEventListener('resize', function(){
     document.querySelectorAll('.chart,.chart-tall,.chart-short').forEach(function(el){

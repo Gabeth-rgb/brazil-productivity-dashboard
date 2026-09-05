@@ -58788,5 +58788,343 @@
     "thaissab@br.ibm.com",
     "thiagofc@br.ibm.com",
     "vania.barbosa@ibm.com"
-  ]
+  ],
+  "utilization_targets": {
+    "weekly": [
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 1,
+        "week_num": "WK01",
+        "target_key": "2026_1Q_1_WK01",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 40600.0,
+        "CU_pct_target": 64.6497
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 1,
+        "week_num": "WK02",
+        "target_key": "2026_1Q_1_WK02",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 57300.0,
+        "CU_pct_target": 91.242
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 1,
+        "week_num": "WK03",
+        "target_key": "2026_1Q_1_WK03",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 61500.0,
+        "CU_pct_target": 97.9299
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 1,
+        "week_num": "WK04",
+        "target_key": "2026_1Q_1_WK04",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 60000.0,
+        "CU_pct_target": 95.5414
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 2,
+        "week_num": "WK05",
+        "target_key": "2026_1Q_2_WK05",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 62100.0,
+        "CU_pct_target": 98.8854
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 2,
+        "week_num": "WK06",
+        "target_key": "2026_1Q_2_WK06",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 62000.0,
+        "CU_pct_target": 98.7261
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 2,
+        "week_num": "WK07",
+        "target_key": "2026_1Q_2_WK07",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 62000.0,
+        "CU_pct_target": 98.7261
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 2,
+        "week_num": "WK08",
+        "target_key": "2026_1Q_2_WK08",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 52500.0,
+        "CU_pct_target": 83.5987
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 3,
+        "week_num": "WK09",
+        "target_key": "2026_1Q_3_WK09",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 62100.0,
+        "CU_pct_target": 98.8854
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 3,
+        "week_num": "WK10",
+        "target_key": "2026_1Q_3_WK10",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 62000.0,
+        "CU_pct_target": 98.7261
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 3,
+        "week_num": "WK11",
+        "target_key": "2026_1Q_3_WK11",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 62000.0,
+        "CU_pct_target": 98.7261
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 3,
+        "week_num": "WK12",
+        "target_key": "2026_1Q_3_WK12",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 62000.0,
+        "CU_pct_target": 98.7261
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 3,
+        "week_num": "WK13",
+        "target_key": "2026_1Q_3_WK13",
+        "avail_hrs_target": 62800,
+        "chargeable_hrs_target": 62100.0,
+        "CU_pct_target": 98.8854
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 4,
+        "week_num": "WK01",
+        "target_key": "2026_2Q_4_WK01",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 49277.76097165992,
+        "CU_pct_target": 87.1248
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 4,
+        "week_num": "WK02",
+        "target_key": "2026_2Q_4_WK02",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 54221.44518218623,
+        "CU_pct_target": 95.8654
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 4,
+        "week_num": "WK03",
+        "target_key": "2026_2Q_4_WK03",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 54434.0767611336,
+        "CU_pct_target": 96.2413
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 4,
+        "week_num": "WK04",
+        "target_key": "2026_2Q_4_WK04",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 48267.76097165992,
+        "CU_pct_target": 85.339
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 5,
+        "week_num": "WK05",
+        "target_key": "2026_2Q_5_WK05",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 47204.60307692307,
+        "CU_pct_target": 83.4593
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 5,
+        "week_num": "WK06",
+        "target_key": "2026_2Q_5_WK06",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 55497.23465587044,
+        "CU_pct_target": 98.121
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 5,
+        "week_num": "WK07",
+        "target_key": "2026_2Q_5_WK07",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 55284.60307692307,
+        "CU_pct_target": 97.7451
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 5,
+        "week_num": "WK08",
+        "target_key": "2026_2Q_5_WK08",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 49596.70834008097,
+        "CU_pct_target": 87.6887
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 6,
+        "week_num": "WK09",
+        "target_key": "2026_2Q_6_WK09",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 55497.23465587044,
+        "CU_pct_target": 98.121
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 6,
+        "week_num": "WK10",
+        "target_key": "2026_2Q_6_WK10",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 47204.60307692307,
+        "CU_pct_target": 83.4593
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 6,
+        "week_num": "WK11",
+        "target_key": "2026_2Q_6_WK11",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 55284.60307692307,
+        "CU_pct_target": 97.7451
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 6,
+        "week_num": "WK12",
+        "target_key": "2026_2Q_6_WK12",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 55284.60307692307,
+        "CU_pct_target": 97.7451
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 6,
+        "week_num": "WK13",
+        "target_key": "2026_2Q_6_WK13",
+        "avail_hrs_target": 56560,
+        "chargeable_hrs_target": 55284.60307692307,
+        "CU_pct_target": 97.7451
+      }
+    ],
+    "monthly": [
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 1,
+        "avail_hrs_target": 251200,
+        "chargeable_hrs_target": 219400.0,
+        "CU_pct_target": 87.3408
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 2,
+        "avail_hrs_target": 251200,
+        "chargeable_hrs_target": 238600.0,
+        "CU_pct_target": 94.9841
+      },
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "Month": 3,
+        "avail_hrs_target": 314000,
+        "chargeable_hrs_target": 310200.0,
+        "CU_pct_target": 98.7898
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 4,
+        "avail_hrs_target": 226240,
+        "chargeable_hrs_target": 206201.04388663967,
+        "CU_pct_target": 91.1426
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 5,
+        "avail_hrs_target": 226240,
+        "chargeable_hrs_target": 207583.14914979757,
+        "CU_pct_target": 91.7535
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "Month": 6,
+        "avail_hrs_target": 282800,
+        "chargeable_hrs_target": 268555.6469635627,
+        "CU_pct_target": 94.9631
+      }
+    ],
+    "quarterly": [
+      {
+        "Year": 2026,
+        "Quarter": "1Q",
+        "avail_hrs_target": 816400,
+        "chargeable_hrs_target": 768200.0,
+        "CU_pct_target": 94.096
+      },
+      {
+        "Year": 2026,
+        "Quarter": "2Q",
+        "avail_hrs_target": 735280,
+        "chargeable_hrs_target": 682339.84,
+        "CU_pct_target": 92.8
+      }
+    ],
+    "yearly": [
+      {
+        "Year": 2026,
+        "avail_hrs_target": 1551680,
+        "chargeable_hrs_target": 1450539.8399999999,
+        "CU_pct_target": 93.4819
+      }
+    ]
+  }
 }

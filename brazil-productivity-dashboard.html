@@ -1174,6 +1174,7 @@ function renderTimeaway(){
   var totalOtherTAHrs = rows.reduce((sum, r) => sum + r.OtherTA_hrs, 0);
   var totalHolHrs = rows.reduce((sum, r) => sum + (r.Holiday_hrs||0), 0);
   var totalCombinedTAHrs = totalIllHrs + totalVacHrs + totalOtherTAHrs + totalHolHrs;
+  var combinedTAPct = totalAvail > 0 ? (totalCombinedTAHrs / totalAvail * 100) : 0;
 
   var maxIll = Math.max.apply(null,rows.map(r=>r.Illness_pct));
   var maxVac = Math.max.apply(null,rows.map(r=>r.Vacation_pct));
@@ -1192,7 +1193,7 @@ function renderTimeaway(){
     {label:'Peak Vacation Week (Hrs)',val:maxVacHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:vacWeekHrs?vacWeekHrs.week_label:'—',cls:'purple'},
     {label:'Total Other TA Hours',val:totalOtherTAHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:''},
     {label:'Total Holiday Hours',val:totalHolHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Total for selected period',cls:'blue'},
-    {label:'Combined TA Hours',val:totalCombinedTAHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Illness+Vac+Other+Holiday',cls:(avgIll+avgVac+avgOther+avgHol)>15?'red':''},
+    {label:'Combined TA Hours',val:totalCombinedTAHrs.toLocaleString(undefined, {maximumFractionDigits:1})+'h',sub:'Illness+Vac+Other+Holiday',cls:combinedTAPct>15?'red':''},
   ] : [
     {label:'Avg Illness %',val:avgIll.toFixed(2)+'%',sub:'of Available Hrs',cls:avgIll>3.5?'red':avgIll>2.5?'orange':'green'},
     {label:'Peak Illness Week',val:maxIll.toFixed(2)+'%',sub:illWeek?illWeek.week_label:'—',cls:'red'},
@@ -1200,7 +1201,7 @@ function renderTimeaway(){
     {label:'Peak Vacation Week',val:maxVac.toFixed(1)+'%',sub:vacWeek?vacWeek.week_label:'—',cls:'purple'},
     {label:'Avg Other TA %',val:avgOther.toFixed(2)+'%',sub:'of Available Hrs',cls:''},
     {label:'Avg Holiday %',val:avgHol.toFixed(2)+'%',sub:'of Available Hrs',cls:'blue'},
-    {label:'Combined TA %',val:(avgIll+avgVac+avgOther+avgHol).toFixed(1)+'%',sub:'Illness+Vac+Other+Holiday avg',cls:(avgIll+avgVac+avgOther+avgHol)>15?'red':''},
+    {label:'Aggregated TA %',val:combinedTAPct.toFixed(1)+'%',sub:'(Illness+Vac+Other+Holiday Hrs) / Avail Hrs',cls:combinedTAPct>15?'red':''},
   ];
 
   document.getElementById('ta-kpis').innerHTML = kpisHTML.map(k=>'<div class="kpi-card '+k.cls+'"><div class="label">'+k.label+'</div><div class="value">'+k.val+'</div><div class="sub">'+k.sub+'</div></div>').join('');

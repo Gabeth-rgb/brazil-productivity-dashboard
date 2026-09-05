@@ -304,6 +304,18 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
         <option value="3Q">Q3</option>
       </select>
     </div>
+    <div class="filter-group">
+      <label>Project:</label>
+      <div class="ms-dropdown" id="ta-project-dropdown">
+        <div class="ms-trigger" id="ta-project-trigger" tabindex="0">All Projects</div>
+        <div class="ms-panel" id="ta-project-panel">
+          <label class="ms-option">
+            <input type="checkbox" id="ta-proj-all" value="all" checked onchange="taProjAllChange(this)"/>All Projects
+          </label>
+          <hr class="ms-divider"/>
+        </div>
+      </div>
+    </div>
     <div class="filter-group" style="margin-left:auto">
       <label>View Mode:</label>
       <div class="toggle-group">
@@ -408,6 +420,18 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
         <option value="2025">2025</option>
         <option value="2026" selected>2026</option>
       </select>
+    </div>
+    <div class="filter-group">
+      <label>Project:</label>
+      <div class="ms-dropdown" id="hc-project-dropdown">
+        <div class="ms-trigger" id="hc-project-trigger" tabindex="0">All Projects</div>
+        <div class="ms-panel" id="hc-project-panel">
+          <label class="ms-option">
+            <input type="checkbox" id="hc-proj-all" value="all" checked onchange="hcProjAllChange(this)"/>All Projects
+          </label>
+          <hr class="ms-divider"/>
+        </div>
+      </div>
     </div>
     <div class="filter-group" style="margin-left:auto">
       <label>View Mode:</label>
@@ -1133,7 +1157,8 @@ function renderPerformance(){
 function renderTimeaway(){
   var q = document.getElementById('ta-quarter').value;
   var yr = document.getElementById('ta-year').value;
-  var rows = filterWeekly(q, null, null, yr);
+  var proj = getTaProjects();
+  var rows = filterWeekly(q, null, null, yr, proj);
   if(!rows.length) return;
   var labels = rows.map(r=>wLabel(r.week_label));
 
@@ -1651,6 +1676,76 @@ function projProjItemChange(cb){
   renderProjects();
 }
 
+// ===== MULTI-SELECT PROJECT DROPDOWN (Time Away Tab) =====
+function getTaProjects(){
+  var allCb = document.getElementById('ta-proj-all');
+  if(allCb && allCb.checked) return 'all';
+  var checked = Array.from(document.querySelectorAll('#ta-project-panel input[type=checkbox]:not(#ta-proj-all):checked')).map(function(cb){return cb.value;});
+  return checked.length ? checked : 'all';
+}
+
+function taUpdateTriggerLabel(){
+  var allCb = document.getElementById('ta-proj-all');
+  var trigger = document.getElementById('ta-project-trigger');
+  if(!trigger) return;
+  if(allCb && allCb.checked){ trigger.textContent = 'All Projects'; return; }
+  var checked = Array.from(document.querySelectorAll('#ta-project-panel input[type=checkbox]:not(#ta-proj-all):checked')).map(function(cb){return cb.value;});
+  trigger.textContent = checked.length === 0 ? 'All Projects' : checked.length === 1 ? checked[0] : checked.length + ' projects selected';
+}
+
+function taProjAllChange(cb){
+  if(cb.checked) document.querySelectorAll('#ta-project-panel input[type=checkbox]:not(#ta-proj-all)').forEach(function(c){c.checked=false;});
+  taUpdateTriggerLabel();
+  renderTimeaway();
+}
+
+function taProjItemChange(cb){
+  if(cb.checked){
+    var allCb = document.getElementById('ta-proj-all');
+    if(allCb) allCb.checked = false;
+  } else {
+    var anyChecked = Array.from(document.querySelectorAll('#ta-project-panel input[type=checkbox]:not(#ta-proj-all):checked')).length > 0;
+    if(!anyChecked){ var a = document.getElementById('ta-proj-all'); if(a) a.checked = true; }
+  }
+  taUpdateTriggerLabel();
+  renderTimeaway();
+}
+
+// ===== MULTI-SELECT PROJECT DROPDOWN (Headcount & Band Tab) =====
+function getHcProjects(){
+  var allCb = document.getElementById('hc-proj-all');
+  if(allCb && allCb.checked) return 'all';
+  var checked = Array.from(document.querySelectorAll('#hc-project-panel input[type=checkbox]:not(#hc-proj-all):checked')).map(function(cb){return cb.value;});
+  return checked.length ? checked : 'all';
+}
+
+function hcUpdateTriggerLabel(){
+  var allCb = document.getElementById('hc-proj-all');
+  var trigger = document.getElementById('hc-project-trigger');
+  if(!trigger) return;
+  if(allCb && allCb.checked){ trigger.textContent = 'All Projects'; return; }
+  var checked = Array.from(document.querySelectorAll('#hc-project-panel input[type=checkbox]:not(#hc-proj-all):checked')).map(function(cb){return cb.value;});
+  trigger.textContent = checked.length === 0 ? 'All Projects' : checked.length === 1 ? checked[0] : checked.length + ' projects selected';
+}
+
+function hcProjAllChange(cb){
+  if(cb.checked) document.querySelectorAll('#hc-project-panel input[type=checkbox]:not(#hc-proj-all)').forEach(function(c){c.checked=false;});
+  hcUpdateTriggerLabel();
+  renderHeadcount();
+}
+
+function hcProjItemChange(cb){
+  if(cb.checked){
+    var allCb = document.getElementById('hc-proj-all');
+    if(allCb) allCb.checked = false;
+  } else {
+    var anyChecked = Array.from(document.querySelectorAll('#hc-project-panel input[type=checkbox]:not(#hc-proj-all):checked')).length > 0;
+    if(!anyChecked){ var a = document.getElementById('hc-proj-all'); if(a) a.checked = true; }
+  }
+  hcUpdateTriggerLabel();
+  renderHeadcount();
+}
+
 // ===== SHARED HELPER: wire up a multi-select dropdown =====
 function initMsDropdown(dropdownId, panelId, triggerId, allCbId, itemChangeFn, projs){
   var panel = document.getElementById(panelId);
@@ -1692,7 +1787,9 @@ function init(){
 
   initMsDropdown('exec-project-dropdown','exec-project-panel','exec-project-trigger','exec-proj-all', execProjItemChange, projs);
   initMsDropdown('perf-project-dropdown','perf-project-panel','perf-project-trigger','perf-proj-all', perfProjItemChange, projs);
+  initMsDropdown('ta-project-dropdown','ta-project-panel','ta-project-trigger','ta-proj-all', taProjItemChange, projs);
   initMsDropdown('proj-project-dropdown','proj-project-panel','proj-project-trigger','proj-proj-all', projProjItemChange, projs);
+  initMsDropdown('hc-project-dropdown','hc-project-panel','hc-project-trigger','hc-proj-all', hcProjItemChange, projs);
 
   // Close all dropdowns when clicking outside
   document.addEventListener('click', function(e){

@@ -28,6 +28,17 @@ header span{font-size:12px;color:#a8b0b9}
 .filters-bar label{font-size:12px;font-weight:600;color:#57606a;margin-right:4px}
 .filters-bar select,.filters-bar input[type=range]{border:1px solid #d0d7de;border-radius:6px;padding:5px 10px;font-size:12px;background:#fff;color:#1f2328;cursor:pointer}
 .filters-bar select:focus{outline:2px solid #0f62fe;border-color:#0f62fe}
+/* Multi-select dropdown */
+.ms-dropdown{position:relative;display:inline-block}
+.ms-trigger{border:1px solid #d0d7de;border-radius:6px;padding:5px 28px 5px 10px;font-size:12px;background:#fff;color:#1f2328;cursor:pointer;min-width:160px;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;user-select:none;position:relative}
+.ms-trigger::after{content:"▾";position:absolute;right:9px;top:50%;transform:translateY(-50%);font-size:10px;color:#57606a;pointer-events:none}
+.ms-trigger:focus,.ms-trigger.open{outline:2px solid #0f62fe;border-color:#0f62fe}
+.ms-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;min-width:220px;max-height:260px;overflow-y:auto;background:#fff;border:1px solid #d0d7de;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.12);z-index:200;padding:4px 0}
+.ms-panel.open{display:block}
+.ms-option{display:flex;align-items:center;gap:8px;padding:6px 12px;font-size:12px;cursor:pointer;color:#1f2328}
+.ms-option:hover{background:#f0f6ff}
+.ms-option input[type=checkbox]{accent-color:#0f62fe;cursor:pointer;flex-shrink:0}
+.ms-divider{border:none;border-top:1px solid #e5e7eb;margin:4px 0}
 .filter-group{display:flex;align-items:center;gap:6px}
 .filter-group span{font-size:12px;color:#57606a;min-width:32px}
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin-bottom:20px}
@@ -209,9 +220,16 @@ footer{text-align:center;font-size:11px;color:#a8b0b9;padding:20px;margin-top:10
     </div>
     <div class="filter-group">
       <label>Project:</label>
-      <select id="perf-project" onchange="renderPerformance()">
-        <option value="all">All Projects</option>
-      </select>
+      <div class="ms-dropdown" id="perf-project-dropdown">
+        <div class="ms-trigger" id="perf-project-trigger" tabindex="0">All Projects</div>
+        <div class="ms-panel" id="perf-project-panel">
+          <label class="ms-option">
+            <input type="checkbox" id="perf-proj-all" value="all" checked onchange="perfProjAllChange(this)"/>All Projects
+          </label>
+          <hr class="ms-divider"/>
+          <!-- project checkboxes injected by init() -->
+        </div>
+      </div>
     </div>
     <div class="filter-group">
       <label>CU Target (%):</label>
@@ -506,11 +524,15 @@ function filterWeekly(quarter, mFrom, mTo, year, project){
   if(quarter && quarter!=='all') rows = rows.filter(r=>r.Quarter===quarter);
   if(mFrom) rows = rows.filter(r=>r.Month>=parseInt(mFrom));
   if(mTo) rows = rows.filter(r=>r.Month<=parseInt(mTo));
-  // project filter: keep weeks where that project exists in project_weekly
-  if(project && project!=='all'){
-    var projWeeks = {};
-    RAW.project_weekly.filter(function(r){return r.Project_Norm===project;}).forEach(function(r){projWeeks[r.week_label]=true;});
-    rows = rows.filter(r=>projWeeks[r.week_label]);
+  // project filter: accepts a single string or an array of project names
+  if(project){
+    var projArr = Array.isArray(project) ? project : [project];
+    projArr = projArr.filter(function(p){return p && p!=='all';});
+    if(projArr.length){
+      var projWeeks = {};
+      RAW.project_weekly.filter(function(r){return projArr.indexOf(r.Project_Norm)!==-1;}).forEach(function(r){projWeeks[r.week_label]=true;});
+      rows = rows.filter(r=>projWeeks[r.week_label]);
+    }
   }
   return rows;
 }
@@ -963,7 +985,7 @@ function updateTarget(v){
 function renderPerformance(){
   var q = document.getElementById('perf-quarter').value;
   var yr = document.getElementById('perf-year').value;
-  var proj = document.getElementById('perf-project').value;
+  var proj = getPerfProjects();
   var rows = filterWeekly(q, null, null, yr, proj);
   if(!rows.length) return;
   var labels = rows.map(r=>wLabel(r.week_label));
@@ -1494,10 +1516,61 @@ function renderInsights(){
   tableEl.innerHTML = html;
 }
 
+// ===== MULTI-SELECT PROJECT DROPDOWN (Performance Trends) =====
+function getPerfProjects(){
+  var allCb = document.getElementById('perf-proj-all');
+  if(allCb && allCb.checked) return 'all';
+  var checked = Array.from(document.querySelectorAll('#perf-project-panel input[type=checkbox]:not(#perf-proj-all):checked')).map(function(cb){return cb.value;});
+  return checked.length ? checked : 'all';
+}
+
+function perfUpdateTriggerLabel(){
+  var allCb = document.getElementById('perf-proj-all');
+  var trigger = document.getElementById('perf-project-trigger');
+  if(!trigger) return;
+  if(allCb && allCb.checked){
+    trigger.textContent = 'All Projects';
+    return;
+  }
+  var checked = Array.from(document.querySelectorAll('#perf-project-panel input[type=checkbox]:not(#perf-proj-all):checked')).map(function(cb){return cb.value;});
+  if(checked.length === 0){
+    trigger.textContent = 'All Projects';
+  } else if(checked.length === 1){
+    trigger.textContent = checked[0];
+  } else {
+    trigger.textContent = checked.length + ' projects selected';
+  }
+}
+
+function perfProjAllChange(cb){
+  if(cb.checked){
+    document.querySelectorAll('#perf-project-panel input[type=checkbox]:not(#perf-proj-all)').forEach(function(c){c.checked=false;});
+  }
+  perfUpdateTriggerLabel();
+  renderPerformance();
+}
+
+function perfProjItemChange(cb){
+  if(cb.checked){
+    var allCb = document.getElementById('perf-proj-all');
+    if(allCb) allCb.checked = false;
+  } else {
+    // if nothing is checked, revert to "All"
+    var anyChecked = Array.from(document.querySelectorAll('#perf-project-panel input[type=checkbox]:not(#perf-proj-all):checked')).length > 0;
+    if(!anyChecked){
+      var allCb2 = document.getElementById('perf-proj-all');
+      if(allCb2) allCb2.checked = true;
+    }
+  }
+  perfUpdateTriggerLabel();
+  renderPerformance();
+}
+
 // ===== INIT =====
 function init(){
   var projs = RAW.projects;
-  ['exec-project','proj-project','perf-project'].forEach(function(id){
+  // populate native selects (exec & projects tabs)
+  ['exec-project','proj-project'].forEach(function(id){
     var sel = document.getElementById(id);
     if(!sel) return;
     projs.forEach(function(p){
@@ -1506,6 +1579,43 @@ function init(){
       sel.appendChild(opt);
     });
   });
+  // populate multi-select checkbox dropdown for Performance Trends
+  var panel = document.getElementById('perf-project-panel');
+  if(panel){
+    projs.forEach(function(p){
+      var lbl = document.createElement('label');
+      lbl.className = 'ms-option';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox'; cb.value = p;
+      cb.addEventListener('change', function(){perfProjItemChange(this);});
+      lbl.appendChild(cb);
+      lbl.appendChild(document.createTextNode(p));
+      panel.appendChild(lbl);
+    });
+  }
+  // toggle panel open/close on trigger click
+  var trigger = document.getElementById('perf-project-trigger');
+  var panelEl = document.getElementById('perf-project-panel');
+  if(trigger && panelEl){
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = panelEl.classList.toggle('open');
+      trigger.classList.toggle('open', isOpen);
+    });
+    trigger.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        var isOpen = panelEl.classList.toggle('open');
+        trigger.classList.toggle('open', isOpen);
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(!document.getElementById('perf-project-dropdown').contains(e.target)){
+        panelEl.classList.remove('open');
+        trigger.classList.remove('open');
+      }
+    });
+  }
   renderExecutive();
   window.addEventListener('resize', function(){
     document.querySelectorAll('.chart,.chart-tall,.chart-short').forEach(function(el){
